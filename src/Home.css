@@ -27,14 +27,14 @@
 }
 .home3 {  
     display: grid;
-    /* grid-row: 1; */
-  /* column-gap: 50px; */
-  /* grid-template-columns: auto auto auto; */
+    grid-row: 1;
+  column-gap: 50px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
 
   padding: 0px;
     z-index: 1; 
     margin-left: 5px;  
     margin-right: 5px;
     overflow-x: hidden; 
-    
+
 }
