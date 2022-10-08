@@ -9,7 +9,7 @@ function Home() {
 
                 <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="" className="home__image" />
 
-                <div className="home4">
+                <div className="home2">
                     <Product
                         id="12321341"
                         title="Bennett Mystic 15.6 inch Laptop Shoulder Messenger Sling Office Bag, Water Repellent Fabric for Men and Women (Blue)"
