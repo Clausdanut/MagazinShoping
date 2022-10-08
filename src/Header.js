@@ -14,32 +14,32 @@ function Header() {
             <Link to="./" style={{textDecoration: "none"}}>
             
             </Link>
-            <div className="header__logo">
-    <StorefrontIcon className="header__logoImage" fontSize="large"/>
-    <h2 className="header__logoTitle">eShop</h2>
+            <div className="header-logo">
+    <StorefrontIcon className="header-logoImage" fontSize="large"/>
+    <h2 className="header-logoTitle">eShop</h2>
     </div>
-    <div className="header__search">
-      <input type="text" className="header__searchInput"/>
-      <SearchIcon className="header__searchIcon"/>
+    <div className="header-search">
+      <input type="text" className="header-searchInput"/>
+      <SearchIcon className="header-searchIcon"/>
     </div>
 
-    <div className="header__nav">
-       <div className="nav__item">
-        <span className="nav__itemLineOne">Hello Guess</span>
-        <span className="nav__itemLineTwo">Sign In</span>
+    <div className="header-nav">
+       <div className="nav-item">
+        <span className="navitemLineOne">Hello Guess</span>
+        <span className="nav-itemLineTwo">Sign In</span>
        </div>
 
-       <div className="nav__item">
-       <span className="nav__itemLineOne">Your</span>
-        <span className="nav__itemLineTwo">Shop</span>
+       <div className="nav-item">
+       <span className="nav-itemLineOne">Your</span>
+        <span className="nav-itemLineTwo">Shop</span>
        </div>
 
 
 
        <Link to="/checkout" style={{ textDecoration: "none" }}>
-          <div className="nav__itemBasket">
+          <div className="nav-itemBasket">
             <ShoppingBasketIcon/>
-            <span className="nav__itemLineTwo nav__basketCount">0</span>
+            <span className="nav-itemLineTwo nav-basketCount">0</span>
           </div>
         </Link>
 
