@@ -5,9 +5,14 @@ import Checkout from "./Checkout";
 import Login from "./Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Admin from "./Admin";
+import Contact from "./Contact";
+
+
+
 
 function App() {
   return (
+    
     <div className="App">
       <Router>
 
@@ -20,6 +25,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/contact">
+            <Header /> 
+            <Contact />          
           </Route>
           <Route path="/admin">
             <Admin />

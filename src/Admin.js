@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
 
+
 function Admin() {
     const history = useHistory();
     const [email, setEmail] = useState('');

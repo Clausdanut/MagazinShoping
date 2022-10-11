@@ -5,6 +5,8 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+
 
 function Header() {
     const [{basket}, dispatch] = useStateValue();
@@ -38,6 +40,12 @@ function Header() {
           <div className="nav__itemBasket">
             <ShoppingBasketIcon/>
             <span className="nav__itemLineTwo nav__basketCount">{basket.length}</span>
+          </div>
+        </Link>
+        <Link to="/contact" style={{ textDecoration: "Contact" }}>
+          <div className="nav1__itemBasket">
+            <PermContactCalendarIcon />
+          <span className="nav__itemLineTwo nav__basketCount">Contact</span>
           </div>
         </Link>
       </div>

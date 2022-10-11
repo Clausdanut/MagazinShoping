@@ -80,3 +80,10 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.nav1__itemBasket {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right:50px;
+    margin-left:-40px;
+}
