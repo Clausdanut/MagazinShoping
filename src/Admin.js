@@ -1,10 +1,10 @@
+import './Login.css';
 import React, { useState } from 'react';
-import './Login.css'
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
 
-function Login() {
+function Admin() {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,25 +15,17 @@ function Login() {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
-                history.push('/');
-                console.log(auth.user.displayName);
+                if(auth.user.displayName !== "admin"){
+                    alert('nu esti admin');   
+                        
+                } else {
+                    history.push('/admin-panou');
+                };
             })
             .catch(error => alert(error.message))
-
     }
 
-    const register = e => {
-        e.preventDefault();
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                if (auth) {
-                    history.push('/');
-                }
-            })
-            .catch(error => alert(error.message))
-
-    }
+  
 
     return (
         <div className='login'> 
@@ -62,10 +54,10 @@ function Login() {
                     see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
 
-                <button className='login__registerButton' onClick={register}>Create your eShop Account</button>
+                
             </div>
         </div>
     )
 }
 
-export default Login;
+export default Admin;
