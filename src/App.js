@@ -12,6 +12,8 @@ import Contact from "./Contact";
 
 
 
+
+
 function App() {
   return (
     
@@ -19,11 +21,11 @@ function App() {
       <Router>
 
         <Switch>
-
+      
           <Route path="/login">
             <Login />
           </Route>
-
+   
           <Route path="/checkout">
             <Header />
             <Checkout />
@@ -34,6 +36,7 @@ function App() {
           </Route>
           <Route path="/admin">
             <Admin />
+            
           </Route>
 
           <Route path="/">    
