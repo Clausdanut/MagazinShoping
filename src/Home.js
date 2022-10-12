@@ -1,8 +1,39 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
+import { db } from "./firebase";
+import { useState } from "react";
+import { useEffect } from "react";
+
 
 function Home() {
+
+    const [data , setData] = useState();
+    const [isLoading , setIsLoading] = useState(true);
+    async function getData(){
+        setIsLoading(true);
+        let helperArr = []
+        const products = db.collection('products');
+        const doc = await products.where('is_product','==',true).get();
+        if (doc.empty) {
+        console.log('No such document!');
+        } else {
+            doc.forEach(doc =>{
+                helperArr.push(doc.data());
+            })
+        setData(helperArr);
+        setIsLoading(false);
+        }     
+    }
+    useEffect(() => {
+        getData();
+    } , [])
+    
+    console.log(data);
+    
+
+    
+
     return (
         <div className="home1">
             <div className="home__container">
@@ -10,20 +41,18 @@ function Home() {
                 <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="" className="home__image" />
 
                 <div className="home2">
-                    <Product
-                        id="12321341"
-                        title="Bennett Mystic 15.6 inch Laptop Shoulder Messenger Sling Office Bag, Water Repellent Fabric for Men and Women (Blue)"
-                        price={11.96}
-                        rating={5}
-                        image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"
-                    />
-                    <Product
-                        id="49538094"
-                        title="IFB 30 L Convection Microwave Oven (30BRC2, Black, With Starter Kit)"
-                        price={239.0}
-                        rating={4}
-                        image="https://images-na.ssl-images-amazon.com/images/I/81D8pNFmWzL._SL1500_.jpg"
-                    />
+                    {isLoading ? (<div>Loading</div>) : (data.map((product,key) => {
+                         return (<Product
+                         key={key}
+                         id={key}
+                         title={product.nume}
+                         price={product.pret}
+                         rating={product.rating}
+                         image={product.imagine}
+            
+                     />)
+                    }))}
+
                 </div>
 
                 <div className="home2">

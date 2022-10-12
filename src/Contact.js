@@ -24,7 +24,8 @@ const Contact = () => {
       .add({
         name: name,
         email: email,
-        message: message,
+        message: message, 
+        is_contact : true
       })
       .then(() => {
         setLoader(false);
