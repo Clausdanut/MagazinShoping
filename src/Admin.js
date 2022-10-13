@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
 import Dashboard from "./Dashboard";
+import './design.css';
 
 
 
@@ -28,7 +29,7 @@ function Admin() {
             .catch(error => alert(error.message))
     }
 
-  
+
 
     return (
         <div className='login'> 

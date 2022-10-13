@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./Contact.css";
 import { db } from "./firebase";
+import './design.css';
 import './Login.css';
 import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router';
 import StorefrontIcon from '@material-ui/icons/Storefront';
