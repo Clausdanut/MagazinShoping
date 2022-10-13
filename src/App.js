@@ -36,7 +36,10 @@ function App() {
           </Route>
           <Route path="/admin">
             <Admin />
-            
+          </Route>
+          <Route path="/checkout">
+            {/* <Dashboard /> */}
+            <Checkout />
           </Route>
 
           <Route path="/">    
