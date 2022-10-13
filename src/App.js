@@ -6,10 +6,7 @@ import Login from "./Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Admin from "./Admin";
 import Contact from "./Contact";
-
-
-
-
+import Dashboard from './Dashboard';
 
 
 
@@ -36,9 +33,10 @@ function App() {
           </Route>
           <Route path="/admin">
             <Admin />
+            <Dashboard />
           </Route>
+          
           <Route path="/checkout">
-            {/* <Dashboard /> */}
             <Checkout />
           </Route>
 

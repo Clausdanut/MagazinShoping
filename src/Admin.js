@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
+import Dashboard from "./Dashboard";
 
 
 
@@ -21,7 +22,7 @@ function Admin() {
                     alert('nu esti admin');   
                         
                 } else {
-                    history.push('/admin-panou');
+                    history.push('/admin');
                 };
             })
             .catch(error => alert(error.message))

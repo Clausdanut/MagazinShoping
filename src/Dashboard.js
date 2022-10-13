@@ -1,33 +1,14 @@
+import React, { useState, useEffect } from "react";
+import "./Contact.css";
+import { db } from "./firebase";
 import './Login.css';
-import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
-import { Dashboard } from '@mui/icons-material';
-function Admin() {
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const signIn = e => {
-        e.preventDefault();
-
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                if(auth.user.displayName !== "admin"){
-                    alert('nu esti admin');   
-                        
-                } else {
-                    history.push('/admin-panou');
-                };
-            })
-            .catch(error => alert(error.message))
-    }
-
-  
-
+export default function Dashboard() {
     return (
+      <div>
+      
 
     <link
       rel="stylesheet"
@@ -45,8 +26,6 @@ function Admin() {
       type="text/css"
     />
     <link rel="stylesheet" type="text/css" href="./design.css" />
-</head>
-<body>
     <div class="container container-fluid">
 		<div class="row">
                 <div class="col-12 col-md-2">
@@ -123,6 +102,12 @@ function Admin() {
                 </div>
             </div>
     </div>
-</body>
+    </div>
+    );
+  }
 
-export default Dashboard;
+
+            
+
+
+
