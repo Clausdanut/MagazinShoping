@@ -4,6 +4,7 @@ import './Login.css';
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
+import Admin from "./Admin";
 
 export default function AdminSidebar() {
     return (

@@ -9,6 +9,8 @@ import Admin from "./Admin";
 import Contact from "./Contact";
 import Dashboard from './Dashboard';
 import AdminSidebar from './AdminSidebar';
+import AdminProduct from './Admin-products';
+
 
 
 
@@ -23,6 +25,7 @@ function App() {
       
           <Route path="/login">
             <Login />
+            <Admin />
           </Route>
    
           <Route path="/checkout">
@@ -31,13 +34,27 @@ function App() {
           </Route>
           <Route path="/contact">
             <Header /> 
-            <Contact />          
+            <Contact />  
+
           </Route>
           <Route path="/admin-panou">
-          <Header /> 
+          <Admin />
           <AdminSidebar />
           <Dashboard />
+          
           </Route>
+          <Route path="/admin">
+          <AdminSidebar />
+          <Dashboard />
+          
+          </Route>
+          <Route path="/admin-products">
+          <AdminSidebar />
+          <AdminProduct />
+
+          
+          </Route>
+        
           
           <Route path="/checkout">
             <Checkout />
