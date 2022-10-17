@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
-import Dashboard from "./Dashboard";
+import AdminSidebar from './AdminSidebar';
 import './design.css';
 
 

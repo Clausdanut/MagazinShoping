@@ -6,6 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  
 }
 
 /* Scroll Bar */
@@ -496,8 +497,6 @@ footer {
   z-index: 10;
 }
 #sidebar {
-  min-width: 100%;
-  max-width: 100%;
   background: #232f3e;
   color: #fff;
   transition: all 0.3s;
@@ -614,3 +613,4 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+

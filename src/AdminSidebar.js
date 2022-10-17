@@ -52,6 +52,9 @@ export default function AdminSidebar() {
                     <li>
                         <a href="#"><i class="fas fa-users"></i> Users</a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fas fa-users"></i> Contact</a>
+                    </li>
             
                 </ul>
                 </nav>

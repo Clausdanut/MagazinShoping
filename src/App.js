@@ -7,9 +7,9 @@ import Login from "./Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Admin from "./Admin";
 import Contact from "./Contact";
-import Dashboard from './Dashboard';
 import AdminSidebar from './AdminSidebar';
 import AdminProduct from './Admin-products';
+import AdminContact from './Admin-contact';
 
 
 
@@ -25,7 +25,6 @@ function App() {
       
           <Route path="/login">
             <Login />
-            <Admin />
           </Route>
    
           <Route path="/checkout">
@@ -40,18 +39,19 @@ function App() {
           <Route path="/admin-panou">
           <Admin />
           <AdminSidebar />
-          <Dashboard />
-          
           </Route>
-          <Route path="/admin">
-          <AdminSidebar />
-          <Dashboard />
+
           
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route path="/admin-products">
           <AdminSidebar />
           <AdminProduct />
-
+          </Route>
+          <Route path="/admin-contact">
+          <AdminSidebar />
+          <AdminContact />
           
           </Route>
         
