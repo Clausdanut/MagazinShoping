@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
 import Admin from "./Admin";
+import Create from "./Create";
 
 export default function AdminSidebar() {
     return (
@@ -27,8 +28,10 @@ export default function AdminSidebar() {
             <div class="sidebar-wrapper">
                 <nav id="sidebar">
                     <ul class="list-unstyled components">
-                    <li>
-                        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <li> 
+                        <Link to="/home" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fab fa-product-hunt"></i> Home</Link>
+            
                     </li>
             
                     <li>
@@ -36,24 +39,23 @@ export default function AdminSidebar() {
                             class="fab fa-product-hunt"></i> Product</Link>
                         <ul class="collapse list-unstyled" id="productSubmenu">
                             <li>
-                            <a href="#"><i class="fas fa-clipboard-list"></i> All</a>
+                            <a href="/admin-product"><i class="fas fa-clipboard-list"></i> All</a>
                             </li>
             
                             <li>
-                            <a href="#"><i class="fas fa-plus"></i> Create</a>
+                            <Link to="/create" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fab fa-product-hunt"></i>Create</Link>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fas fa-shopping-basket"></i> Orders</a>
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fas fa-users"></i> Users</a>
+                        <a href=""><i class="fas fa-users"></i> Users</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-users"></i> Contact</a>
+                    <Link to="/admin-contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fab fa-product-hunt"></i> Contact</Link>
+                            
                     </li>
             
                 </ul>

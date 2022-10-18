@@ -10,6 +10,8 @@ import AdminSidebar from './AdminSidebar';
 import AdminProduct from './Admin-products';
 import AdminContact from './Admin-contact';
 import Admin from "./Admin";
+import Create from "./Create"
+
 
 
 
@@ -50,14 +52,16 @@ function App() {
             <div className='product1'>
           <AdminSidebar />
           <AdminProduct />
+      
           </div>
           </Route>
 
 
           <Route path="/admin-contact">
+          <div className='product1'>
           <AdminSidebar />
           <AdminContact />
-          
+          </div>
           </Route>
         
           

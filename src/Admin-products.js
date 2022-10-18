@@ -4,7 +4,9 @@ import Product from "./Product";
 import { db } from "./firebase";
 import { useState } from "react";
 import { useEffect } from "react";
+import Create from "./Create";
 const AdminProduct = props =>{
+    const [showForm,setShowForm] =useState(false)
     const [data , setData] = useState();
     const [isLoading , setIsLoading] = useState(true);
     async function getData(){
@@ -28,10 +30,45 @@ const AdminProduct = props =>{
     
     console.log(data);
     
-
+    const [nume, setName] = useState("");
+    const [imagine, setImagine] = useState("");
+    const [pret, setPrice] = useState("");
+    const [rating, setRating] = useState("");
+  
+    const [loader, setLoader] = useState(false);
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setLoader(true);
+  
+      db.collection("contacts")
+        .add({
+          nume: nume,
+          imagine: imagine,
+          pret: pret, 
+          is_product : true,
+          rating: rating,
+        })
+        .then(() => {
+          setLoader(false);
+          alert("Mesaj trmis👍");
+        })
+        .catch((error) => {
+          alert(error.message);
+          setLoader(false);
+        });
+  
+      setName("");
+      setPrice("");
+      setImagine("");
+      setRating ("");
+    };
+   function formShowHandler(){
+    setShowForm(prevState => !prevState)
+  }
     
 
-    return <div>
+    return <div class="container">
          {isLoading ? (<div>Loading</div>) : (data.map((product,key) => {
                          return (<Product
                          key={key}
@@ -42,7 +79,12 @@ const AdminProduct = props =>{
                          image={product.imagine}
             
                      />)   
-                    }))}
+                
+                     
+
+                }))}
+                <button onClick={formShowHandler}>Arata te</button>
+    {showForm && <Create></Create> }    
     </div>
     
 }
