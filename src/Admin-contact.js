@@ -35,9 +35,14 @@ const AdminContact = props =>{
 
     return <div>
          {isLoading ? (<div>Loading</div>) : (data.map((contact) => {
-                         return (<div>{contact.name}
-                                    {contact.email}
-                                    {contact.message}
+                         return (
+                         <div className="contact-admin">
+                            <ul>
+                                <li> {contact.name}</li>
+                                <li>{contact.email}</li>
+                                <li>{contact.message}</li>
+                            </ul>
+                                    
 
                          </div>)   
                          

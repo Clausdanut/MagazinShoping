@@ -37,17 +37,16 @@ function App() {
 
           </Route>
           <Route path="/admin-panou">
-          <Admin />
+          <AdminSidebar />
           </Route>
 
           
           <Route path="/admin">
             <Admin />
-          <AdminSidebar />
-          <AdminProduct />
+          
           </Route>
 
-          <Route path="/admin-products">
+          <Route path="/admin-product">
             <div className='product1'>
           <AdminSidebar />
           <AdminProduct />

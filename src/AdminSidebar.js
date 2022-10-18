@@ -32,8 +32,8 @@ export default function AdminSidebar() {
                     </li>
             
                     <li>
-                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="fab fa-product-hunt"></i> Products</a>
+                        <Link to="/admin-product" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fab fa-product-hunt"></i> Product</Link>
                         <ul class="collapse list-unstyled" id="productSubmenu">
                             <li>
                             <a href="#"><i class="fas fa-clipboard-list"></i> All</a>

@@ -24,7 +24,7 @@ function Admin() {
                     alert('nu esti admin');   
                         
                 } else {
-                    history.push('/admin');
+                    history.push('/admin-panou');
                 };
             })
             .catch(error => alert(error.message))
