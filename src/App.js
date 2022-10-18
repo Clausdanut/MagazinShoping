@@ -64,7 +64,14 @@ function App() {
           </div>
           </Route>
         
-          
+          <Route path="/create">
+          <div className='product1'>
+          <AdminSidebar />
+          <Create />
+          </div>
+          </Route>
+
+
           <Route path="/checkout">
             <Checkout />
           </Route>

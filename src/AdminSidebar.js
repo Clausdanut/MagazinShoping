@@ -43,8 +43,8 @@ export default function AdminSidebar() {
                             </li>
             
                             <li>
-                            <Link to="/create" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="fab fa-product-hunt"></i>Create</Link>
+                            <Link to="/create" data-toggle="collapse" aria-expanded="" class=""><i
+                            class=""></i>Create</Link>
                             </li>
                         </ul>
                     </li>
