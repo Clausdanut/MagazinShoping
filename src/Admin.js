@@ -5,6 +5,7 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import { auth } from "./firebase";
 import AdminSidebar from './AdminSidebar';
 import './design.css';
+import { db } from "./firebase";
 
 
 

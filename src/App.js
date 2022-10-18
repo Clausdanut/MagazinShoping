@@ -5,11 +5,11 @@ import Header from "./Header";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Admin from "./Admin";
 import Contact from "./Contact";
 import AdminSidebar from './AdminSidebar';
 import AdminProduct from './Admin-products';
 import AdminContact from './Admin-contact';
+import Admin from "./Admin";
 
 
 
@@ -38,17 +38,23 @@ function App() {
           </Route>
           <Route path="/admin-panou">
           <Admin />
-          <AdminSidebar />
           </Route>
 
           
           <Route path="/admin">
             <Admin />
-          </Route>
-          <Route path="/admin-products">
           <AdminSidebar />
           <AdminProduct />
           </Route>
+
+          <Route path="/admin-products">
+            <div className='product1'>
+          <AdminSidebar />
+          <AdminProduct />
+          </div>
+          </Route>
+
+
           <Route path="/admin-contact">
           <AdminSidebar />
           <AdminContact />

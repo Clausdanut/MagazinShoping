@@ -5,14 +5,15 @@ import { db } from "./firebase";
 import { useState } from "react";
 import { useEffect } from "react";
 import Admin from "./Admin";
+import { ContactEmergency } from "@mui/icons-material";
 const AdminContact = props =>{
     const [data , setData] = useState();
     const [isLoading , setIsLoading] = useState(true);
     async function getData(){
         setIsLoading(true);
         let helperArr = []
-        const contact = db.collection('contact');
-        const doc = await contact.where('contacts','==',true).get();
+        const contact = db.collection('contacts');
+        const doc = await contact.where('is_contact','==',true).get();
         if (doc.empty) {
         console.log('No such document!');
         } else {
@@ -33,18 +34,24 @@ const AdminContact = props =>{
     
 
     return <div>
-         {isLoading ? (<div>Loading</div>) : (data.map((contact,) => {
-                         return (<Contact
+         {isLoading ? (<div>Loading</div>) : (data.map((contact) => {
+                         return (<div>{contact.name}
+                                    {contact.email}
+                                    {contact.message}
+
+                         </div>)   
                          
-                         title={contact.nume}
-                         email={contact.email}
-                         message={contact.message}
-                         image={contact.imagine}
-            
-                     />)   
-                    }))}
+              
+              }))}
+              
     </div>
     
 }
+
+
+
+
+
+
 
 export default AdminContact
