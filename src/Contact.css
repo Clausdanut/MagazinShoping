@@ -25,10 +25,12 @@ button {
 
 /* Contact.js */
 .form {
-  height: 70vh;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-top:5%;
 }
 
 .form > h1 {
@@ -81,4 +83,30 @@ textarea:focus {
 
 .form > button:hover {
   background-color: rgb(0, 0, 196);
+}
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.contact-admin1{
+  padding-top: 2%;
+  font-size: 25px;
+}
+
+.text-formular{
+margin-bottom: 79px;
 }

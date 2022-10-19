@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Contact from "./Contact";
 import Product from "./Product";
 import { db } from "./firebase";
 import { useState } from "react";
@@ -81,7 +82,7 @@ const AdminProduct = props =>{
                      />)   
                 
                      
-
+                                  
                 }))}
                 <button onClick={formShowHandler}>Arata te</button>
     {showForm && <Create></Create> }    

@@ -10,14 +10,18 @@ import { auth } from "./firebase";
 export default function Create() {
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
+  const [rating, setRating] = useState("");
+  const [imagine, setImagine] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    db.collection("products")
+    db.collection("products" )
       .add({
         nume: name,
-        pret:price,
-        is_product : true
+        imagine: imagine,
+        pret: price, 
+        is_product : true,
+        rating: rating,
       })
       .then(() => {
         alert("Mesaj trmis👍");
@@ -27,31 +31,24 @@ export default function Create() {
       });
 
     setName("");
-    setPrice("")
+    setPrice("");
+    setRating("");
+    setImagine("");
   }
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <h1>New Product</h1>
+        <h1>Adaugare Produs</h1>
 
         <label>Name</label>
         <input placeholder="Nume" onChange={(e) => setName(e.target.value)} />
 
         <label>Pret</label>
         <input placeholder="pret" onChange={(e) => setPrice(e.target.value)} />
-
-        <div class="form-group">
-          <label>Imagine</label>
-          <div class="">
-            <input type="file" name="product_images" multiple />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="price_field">Rating</label>
-
-          <input type="text" />
-        </div>
-
+        <label>Rating</label>
+        <input placeholder="rating" onChange={(e) => setRating(e.target.value)} />
+        <label>Imagine</label>
+        <input type="file" name="imagine" multiple onChange={(e) => setImagine(e.target.value)} />
         <button id="login_button" type="submit" class="btn btn-block py-3">
           CREATE
         </button>
