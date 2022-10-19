@@ -1,99 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./Contact.css";
 import { db } from "./firebase";
-import { useState } from "react";
-import { useEffect } from "react";
-import Admin from "./Admin";
-import { ContactEmergency } from "@mui/icons-material";
-import AdminSidebar from './AdminSidebar';
+import "./Login.css";
 
+import { Link, useHistory } from "react-router-dom";
+import StorefrontIcon from "@material-ui/icons/Storefront";
+import { auth } from "./firebase";
 
 export default function Create() {
-    return (
-        <div>
-             <form class="shadow-lg" encType='multipart/form-data'>
-            <h1 class="mb-4">New Product</h1>
+  const [price, setPrice] = useState("");
+  const [name, setName] = useState("");
 
-            <div class="form-group">
-              <label for="name_field">Name</label>
-              <input
-                type="text"
-                id="name_field"
-                class="form-control"
-                value=""
-              />
-            </div>
+  function handleSubmit(e) {
+    e.preventDefault();
+    db.collection("products")
+      .add({
+        nume: name,
+        pret:price,
+        is_product : true
+      })
+      .then(() => {
+        alert("Mesaj trmis👍");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
 
-            <div class="form-group">
-                <label for="price_field">Price</label>
-                <input
-                  type="text"
-                  id="price_field"
-                  class="form-control"
-                  value=""
-                />
-              </div>
+    setName("");
+    setPrice("")
+  }
+  return (
+    <div>
+      <form className="form" onSubmit={handleSubmit}>
+        <h1>New Product</h1>
 
-              <div class="form-group">
-                <label for="description_field">Description</label>
-                <textarea class="form-control" id="description_field" rows="8" ></textarea>
-              </div>
+        <label>Name</label>
+        <input placeholder="Nume" onChange={(e) => setName(e.target.value)} />
 
-              <div class="form-group">
-                <label for="category_field">Category</label>
-                <select class="form-control" id="category_field">
-                    <option>Electronics</option>
-                    <option>Home</option>
-                    <option>Others</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label for="stock_field">Stock</label>
-                <input
-                  type="number"
-                  id="stock_field"
-                  class="form-control"
-                  value=""
-                />
-              </div>
+        <label>Pret</label>
+        <input placeholder="pret" onChange={(e) => setPrice(e.target.value)} />
 
-              <div class="form-group">
-                <label for="seller_field">Seller Name</label>
-                <input
-                  type="text"
-                  id="seller_field"
-                  class="form-control"
-                  value=""
-                />
-              </div>
-              
-              <div class='form-group'>
-                <label>Images</label>
-                
-                    <div class='custom-file'>
-                        <input
-                            type='file'
-                            name='product_images'
-                            class='custom-file-input'
-                            id='customFile'
-                            multiple
-                        />
-                        <label class='custom-file-label' for='customFile'>
-                            Choose Images
-                        </label>
-                    </div>
-            </div>
-
-  
-            <button
-              id="login_button"
-              type="submit"
-              class="btn btn-block py-3"
-            >
-              CREATE
-            </button>
-
-          </form>
+        <div class="form-group">
+          <label>Imagine</label>
+          <div class="">
+            <input type="file" name="product_images" multiple />
+          </div>
         </div>
-            );
-        }
-        
+        <div class="form-group">
+          <label for="price_field">Rating</label>
+
+          <input type="text" />
+        </div>
+
+        <button id="login_button" type="submit" class="btn btn-block py-3">
+          CREATE
+        </button>
+      </form>
+    </div>
+  );
+}

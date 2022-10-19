@@ -39,16 +39,19 @@ function App() {
 
           </Route>
           <Route path="/admin-panou">
+          <Header /> 
           <AdminSidebar />
           </Route>
 
           
           <Route path="/admin">
-            <Admin />
+          <Header /> 
+          <Admin />
           
           </Route>
 
           <Route path="/admin-product">
+          <Header /> 
             <div className='product1'>
           <AdminSidebar />
           <AdminProduct />
@@ -58,6 +61,7 @@ function App() {
 
 
           <Route path="/admin-contact">
+          <Header /> 
           <div className='product1'>
           <AdminSidebar />
           <AdminContact />
@@ -65,6 +69,7 @@ function App() {
           </Route>
         
           <Route path="/create">
+          <Header />
           <div className='product1'>
           <AdminSidebar />
           <Create />
