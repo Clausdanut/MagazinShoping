@@ -41,7 +41,7 @@ const AdminContact = props =>{
 
                           
                           <div className="text-formular">
-                     Date despere Contact
+                  
                             
                             
                      

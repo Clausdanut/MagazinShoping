@@ -2,12 +2,11 @@ import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
 
-function Product({id, title, image, price, rating,}) {
+function Product({id, title, image, price, rating, operation,deleteOperation}) {
 
     const [state, dispatch] = useStateValue();
     
-
-
+    
 
     const addToBasket = () => {
         dispatch({
@@ -17,11 +16,12 @@ function Product({id, title, image, price, rating,}) {
                 image: image,
                 price: price,
                 rating: rating,
+                operations: operation,
                 
             },
         });
     };
-    
+
 
         return (
             <div className="product">
@@ -31,11 +31,8 @@ function Product({id, title, image, price, rating,}) {
                         <small>$</small>
                         <strong>{price}</strong>
                     </p>
-                    <p>{title}</p>
                     <div className="product__rating">
-                    <button id="deleteProduct" type="submit" class="btn btn-block py-3">
- Delete
-        </button>
+                   
                         {Array(rating)
                             .fill()
                             .map((_, i) => (
@@ -47,7 +44,7 @@ function Product({id, title, image, price, rating,}) {
                 <img src={image} />
 
                 <button onClick={addToBasket}>Add to Basket</button>
-
+                <span onClick={() =>deleteOperation(operation.id)} className="delete">Delete</span>    
                 
             </div>
         );

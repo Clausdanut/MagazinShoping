@@ -38,3 +38,10 @@ padding: 0px;
   overflow-x: hidden; 
 
 }
+.delete {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}

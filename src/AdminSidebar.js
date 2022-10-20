@@ -15,10 +15,7 @@ export default function AdminSidebar() {
       type="text/css"
       
     />
-    <link
-            rel="stylesheet"
-      type="text/css"
-    />
+
     <link rel="stylesheet" type="text/css" href="./design.css" />
 
 

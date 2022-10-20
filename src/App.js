@@ -10,7 +10,8 @@ import AdminSidebar from './AdminSidebar';
 import AdminProduct from './Admin-products';
 import AdminContact from './Admin-contact';
 import Admin from "./Admin";
-import Create from "./Create"
+import Create from "./Create";
+
 
 
 
