@@ -23,7 +23,7 @@ export default function AdminSidebar() {
 
 
        
-    <div class="row">
+    <div class="sidebar-col">
         <div class="col-2">
             <div class="sidebar-wrapper">
                 <nav id="sidebar">
@@ -49,9 +49,7 @@ export default function AdminSidebar() {
                         </ul>
                     </li>
 
-                    <li>
-                        <a href=""><i class="fas fa-users"></i> Users</a>
-                    </li>
+                   
                     <li>
                     <Link to="/admin-contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="fab fa-product-hunt"></i> Contact</Link>

@@ -29,7 +29,7 @@ body {
 
 nav {
   background-color: #232f3e;
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
 }
 
 #search_btn {
@@ -617,4 +617,19 @@ ul.CTAs a {
 .product1{
     display: grid;
     grid-template-columns: 0.1fr 0.9fr;
+}
+.sidebar-col{
+height: 100%;
+width: 100%;
+}
+.col-2{
+    height: 100%;
+width: 100%;
+}
+.continer{
+background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  grid-row: 1 / 4;
 }

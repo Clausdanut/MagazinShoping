@@ -49,6 +49,7 @@ function Home() {
                          price={product.pret}
                          rating={product.rating}
                          image={product.imagine}
+                         
             
                      />)
                     }))}

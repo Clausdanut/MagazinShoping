@@ -2,9 +2,12 @@ import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
 
-function Product({id, title, image, price, rating}) {
+function Product({id, title, image, price, rating,}) {
 
     const [state, dispatch] = useStateValue();
+    
+
+
 
     const addToBasket = () => {
         dispatch({
@@ -14,32 +17,40 @@ function Product({id, title, image, price, rating}) {
                 image: image,
                 price: price,
                 rating: rating,
+                
             },
         });
     };
+    
 
-    return (
-        <div className="product">
-            <div className="product__info">
-                <p>{title}</p>
-                <p className="product__price">
-                    <small>$</small>
-                    <strong>{price}</strong>
-                </p>
-                <div className="product__rating">
-                    {Array(rating)
-                    .fill()
-                    .map((_, i) => (
-                        <p>⭐</p>
-                    ))}
+        return (
+            <div className="product">
+                <div className="product__info">
+                    <p>{title}</p>
+                    <p className="product__price">
+                        <small>$</small>
+                        <strong>{price}</strong>
+                    </p>
+                    <p>{title}</p>
+                    <div className="product__rating">
+                    <button id="deleteProduct" type="submit" class="btn btn-block py-3">
+ Delete
+        </button>
+                        {Array(rating)
+                            .fill()
+                            .map((_, i) => (
+                                <p>⭐</p>
+                            ))}
+                    </div>
                 </div>
+
+                <img src={image} />
+
+                <button onClick={addToBasket}>Add to Basket</button>
+
+                
             </div>
-
-            <img src={image} />
-
-            <button onClick={addToBasket}>Add to Basket</button>
-        </div>
-    )
-}
+        );
+    }
 
 export default Product

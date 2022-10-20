@@ -35,15 +35,18 @@ const AdminContact = props =>{
   return <div>
        {isLoading ? (<div>Loading</div>) : (data.map((contact) => {
                        return (
-                        
                        <div className="contact-admin1">
+                        
+                          
+
                           
                           <div className="text-formular">
-                            <h1>Afisare date din formularul de contact</h1>
-                            </div>
-
+                     Date despere Contact
+                            
+                            
+                     
 <table>
-  
+
   <tr>
     <th>Nume</th>{contact.name}
     <th>Email</th>{contact.email}
@@ -51,12 +54,12 @@ const AdminContact = props =>{
   </tr>
   
 </table>
-              
-                              
 
+                   </div>           
+                   
                        </div>)   
                        
-            
+
             }))}
             
   </div>

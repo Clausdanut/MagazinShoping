@@ -48,10 +48,11 @@ export default function Create() {
         <label>Rating</label>
         <input placeholder="rating" onChange={(e) => setRating(e.target.value)} />
         <label>Imagine</label>
-        <input type="file" name="imagine" multiple onChange={(e) => setImagine(e.target.value)} />
+        <input type="file" name="image" multiple onChange={(e) => setImagine(e.target.value)} />
         <button id="login_button" type="submit" class="btn btn-block py-3">
           CREATE
         </button>
+     
       </form>
     </div>
   );
