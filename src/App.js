@@ -12,6 +12,7 @@ import AdminContact from './Admin-contact';
 import Admin from "./Admin";
 import Create from "./Create";
 import ProductDelete from "./ProductDelete"
+import ContactDelete from "./ContactDelete"
 
 
 
