@@ -25,7 +25,8 @@ const Contact = () => {
         name: name,
         email: email,
         message: message, 
-        is_contact : true
+        is_contact : true,
+        id:Math.random()
       })
       .then(() => {
         setLoader(false);

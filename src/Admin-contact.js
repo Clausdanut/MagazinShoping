@@ -32,12 +32,17 @@ const AdminContact = (props) => {
 
   return (
     <div>
+      <div className="cap-tabel-admin">
+       <div>NUME</div>
+       <div>EMAIL</div>
+       <div>MESAJ</div>
+      </div>
       {isLoading ? (
         <div>Loading</div>
       ) : (
         data.map((contact) => {
           return (
-<ContactDelete nume={contact.name} message={contact.message} email={contact.email}></ContactDelete>
+<ContactDelete nume={contact.name} message={contact.message} email={contact.email} id={contact.id}></ContactDelete>
           )
         })
       )}

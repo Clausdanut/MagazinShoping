@@ -21,7 +21,7 @@ export default function Create() {
         imagine: imagine,
         pret: price, 
         is_product : true,
-        rating: rating,
+        rating: Number(rating),
         id:Math.random(),
       })
       .then(() => {

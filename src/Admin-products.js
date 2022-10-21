@@ -13,6 +13,7 @@ const AdminProduct = props =>{
     const [showForm,setShowForm] =useState(false)
     const [data , setData] = useState();
     const [isLoading , setIsLoading] = useState(true);
+    
     async function getData(){
         setIsLoading(true);
         let helperArr = []
@@ -90,7 +91,7 @@ const AdminProduct = props =>{
                          title={product.nume}
                          price={product.pret}
                          rating={product.rating}
-                         image={product.imagine}
+                         image={product.image}
                      />)   
                 
                      
