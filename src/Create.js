@@ -22,6 +22,7 @@ export default function Create() {
         pret: price, 
         is_product : true,
         rating: rating,
+        id:Math.random(),
       })
       .then(() => {
         alert("Mesaj trmis👍");

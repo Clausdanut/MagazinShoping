@@ -6,6 +6,8 @@ import { db } from "./firebase";
 import { useState } from "react";
 import { useEffect } from "react";
 import Create from "./Create";
+import { Delete } from "@material-ui/icons";
+
 const AdminProduct = props =>{
     const [showForm,setShowForm] =useState(false)
     const [data , setData] = useState();
@@ -15,7 +17,6 @@ const AdminProduct = props =>{
         let helperArr = []
         const products = db.collection('products');
         const doc = await products.where('is_product','==',true).get();
-        
         
         if (doc.empty) {
         console.log('No such document!');
@@ -30,15 +31,13 @@ const AdminProduct = props =>{
     useEffect(() => {
         getData();
     } , [])
-    
-    console.log(data);
-    
     const [nume, setName] = useState("");
     const [imagine, setImagine] = useState("");
     const [pret, setPrice] = useState("");
     const [rating, setRating] = useState("");
   
     const [loader, setLoader] = useState(false);
+
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -71,10 +70,10 @@ const AdminProduct = props =>{
     setShowForm(prevState => !prevState)
   }
 
-  
+
     
-  async function ProductgetData() {
-    let result = await  fetch("http://localhost:3000/admin/product/delete/");
+  async function DeletetgetData() {
+    let result = await  fetch("http://localhost:3000/admin/admin-product/delete/");
     result=await result.json();
     setData(result)
     getData()
@@ -86,13 +85,11 @@ const AdminProduct = props =>{
          {isLoading ? (<div>Loading</div>) : (data.map((product,key) => {
                          return (<Product
                          key={key}
-                         id={key}
+                         id={product.id}
                          title={product.nume}
                          price={product.pret}
                          rating={product.rating}
                          image={product.imagine}
-                         
-            
                      />)   
                 
                      
@@ -103,6 +100,7 @@ const AdminProduct = props =>{
               
      
     {showForm && <Create></Create> }    
+ 
     </div>
     
 }
