@@ -5,7 +5,9 @@ import { db } from "./firebase";
 import { useState } from "react";
 
 
-function Product({id, title, image, price, rating, operation}) {
+
+
+function ProductDelete({id, title, image, price, rating, operation}) {
     const [isDeleted , setIsDeleted] = useState(false);
     const [state, dispatch] = useStateValue();
     async function deleteProduct(){
@@ -58,12 +60,11 @@ console.log(id);
                     <img src={image} />
 
                     <button onClick={addToBasket}>Add to Basket</button>
-                    {/* <span onClick={deleteProduct} className="delete">Delete</span> 
-                    */}
+                    <span onClick={deleteProduct} className="delete">Delete</span>    
                     
                 </div>)}
             </div>
         );
     }
 
-export default Product
+export default ProductDelete

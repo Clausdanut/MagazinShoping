@@ -11,6 +11,7 @@ import AdminProduct from './Admin-products';
 import AdminContact from './Admin-contact';
 import Admin from "./Admin";
 import Create from "./Create";
+import ProductDelete from "./ProductDelete"
 
 
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/admin-panou">
           <Header /> 
           <AdminSidebar />
+      
           </Route>
 
           
@@ -55,9 +57,11 @@ function App() {
           <Header /> 
             <div className='product1'>
           <AdminSidebar />
+          
           <AdminProduct />
-      
+         
           </div>
+     
           </Route>
 
 
@@ -76,6 +80,13 @@ function App() {
           <Create />
           </div>
           </Route>
+             
+          <Route path="/productdelete">    
+            <Header />
+           
+          </Route>
+ 
+
 
 
           <Route path="/checkout">
@@ -86,6 +97,7 @@ function App() {
             <Header />
             <Home />
           </Route>
+ 
 
         </Switch>
 

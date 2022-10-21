@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Create from "./Create";
 import { Delete } from "@material-ui/icons";
+import ProductDelete from "./ProductDelete"
 
 const AdminProduct = props =>{
     const [showForm,setShowForm] =useState(false)
@@ -83,7 +84,7 @@ const AdminProduct = props =>{
 
     return <div class="container">
          {isLoading ? (<div>Loading</div>) : (data.map((product,key) => {
-                         return (<Product
+                         return (<ProductDelete
                          key={key}
                          id={product.id}
                          title={product.nume}
