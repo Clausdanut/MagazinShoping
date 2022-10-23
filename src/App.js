@@ -13,7 +13,7 @@ import Admin from "./Admin";
 import Create from "./Create";
 import ProductDelete from "./ProductDelete"
 import ContactDelete from "./ContactDelete"
-
+import HomeScreen from "./HomeScreen";
 
 
 
@@ -54,6 +54,16 @@ function App() {
           
           </Route>
 
+
+          <Route path="/homescreen">
+          <Header /> 
+          <div className='product1'>
+          <AdminSidebar />
+          <HomeScreen />
+          </div>
+          </Route>
+
+
           <Route path="/admin-product">
           <Header /> 
             <div className='product1'>
@@ -81,15 +91,6 @@ function App() {
           <Create />
           </div>
           </Route>
-             
-          <Route path="/productdelete">    
-            <Header />
-           
-          </Route>
- 
-
-
-
           <Route path="/checkout">
             <Checkout />
           </Route>
@@ -99,7 +100,7 @@ function App() {
             <Home />
           </Route>
  
-
+        
         </Switch>
 
       </Router>

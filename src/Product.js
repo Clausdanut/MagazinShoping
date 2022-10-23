@@ -5,6 +5,8 @@ import { db } from "./firebase";
 import { useState } from "react";
 
 
+
+
 function Product({id, title, image, price, rating, operation}) {
     const [isDeleted , setIsDeleted] = useState(false);
     const [state, dispatch] = useStateValue();
@@ -34,6 +36,7 @@ function Product({id, title, image, price, rating, operation}) {
         });
     };
 console.log(id);
+
 
         return (
             <div>

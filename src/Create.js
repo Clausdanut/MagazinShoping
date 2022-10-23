@@ -6,15 +6,17 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import { auth } from "./firebase";
+import HomeScreen from "./HomeScreen"
 
 export default function Create() {
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
   const [rating, setRating] = useState("");
-  const [imagine, setImagine] = useState("");
+  const [imagine, setImage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+    
     db.collection("products" )
       .add({
         nume: name,
@@ -34,10 +36,10 @@ export default function Create() {
     setName("");
     setPrice("");
     setRating("");
-    setImagine("");
+    setImage("");
   }
   return (
-    <div>
+    <div className="App">
       <form className="form" onSubmit={handleSubmit}>
         <h1>Adaugare Produs</h1>
 
@@ -49,10 +51,8 @@ export default function Create() {
         <label>Rating</label>
         <input placeholder="rating" onChange={(e) => setRating(e.target.value)} />
         <label>Imagine</label>
-        <input type="file" name="image" multiple onChange={(e) => setImagine(e.target.value)} />
-        <button id="login_button" type="submit" class="btn btn-block py-3">
-          CREATE
-        </button>
+        <input type="file" name="image" multiple onChange={(e) => setImage(e.target.value)} />
+        <button type="submit">Upload</button>
      
       </form>
     </div>

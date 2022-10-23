@@ -2,12 +2,22 @@ import React from "react";
 import "./Home.css";
 import Contact from "./Contact";
 import Product from "./Product";
-import { db } from "./firebase";
+import { db,STORAGE } from "./firebase";
 import { useState } from "react";
 import { useEffect } from "react";
 import Create from "./Create";
 import { Delete } from "@material-ui/icons";
 import ProductDelete from "./ProductDelete"
+import { getStorage } from "firebase/storage";
+import HomeScreen from "./HomeScreen";
+
+
+
+
+
+
+
+
 
 const AdminProduct = props =>{
     const [showForm,setShowForm] =useState(false)
@@ -34,13 +44,15 @@ const AdminProduct = props =>{
         getData();
     } , [])
     const [nume, setName] = useState("");
-    const [imagine, setImagine] = useState("");
+    const [image, setImagine] = useState("");
     const [pret, setPrice] = useState("");
     const [rating, setRating] = useState("");
   
     const [loader, setLoader] = useState(false);
 
   
+
+    
     const handleSubmit = (e) => {
       e.preventDefault();
       setLoader(true);
@@ -48,7 +60,7 @@ const AdminProduct = props =>{
       db.collection("contacts")
         .add({
           nume: nume,
-          imagine: imagine,
+          imagine: image,
           pret: pret, 
           is_product : true,
           rating: rating,
@@ -75,12 +87,13 @@ const AdminProduct = props =>{
 
     
   async function DeletetgetData() {
-    let result = await  fetch("http://localhost:3000/admin/admin-product/delete/");
+    let result = await  fetch();
     result=await result.json();
     setData(result)
     getData()
     
   }
+
 
 
     return <div class="container">
