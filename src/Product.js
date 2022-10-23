@@ -9,6 +9,7 @@ import { useState } from "react";
 
 function Product({id, title, image, price, rating, operation}) {
     const [isDeleted , setIsDeleted] = useState(false);
+    const [isEdit , setIsEdu] = useState(false);
     const [state, dispatch] = useStateValue();
     async function deleteProduct(){
         const products = db.collection('products');

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./Contact.css";
 import { db } from "./firebase";
 import "./Login.css";
+import { storage } from "./firebase";
 
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import { auth } from "./firebase";
 import HomeScreen from "./HomeScreen"
+
 
 export default function Create() {
   const [price, setPrice] = useState("");
@@ -14,6 +16,8 @@ export default function Create() {
   const [rating, setRating] = useState("");
   const [imagine, setImage] = useState("");
 
+
+  
   function handleSubmit(e) {
     e.preventDefault();
     

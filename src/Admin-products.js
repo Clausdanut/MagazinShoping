@@ -9,7 +9,8 @@ import Create from "./Create";
 import { Delete } from "@material-ui/icons";
 import ProductDelete from "./ProductDelete"
 import { getStorage } from "firebase/storage";
-import HomeScreen from "./HomeScreen";
+import ContactEdit from "./ContactEdit";
+
 
 
 
@@ -93,12 +94,19 @@ const AdminProduct = props =>{
     getData()
     
   }
+  async function ContactEdit() {
+    let result = await  fetch();
+    result=await result.json();
+    setData(result)
+    getData()
+    
+  }
 
 
 
     return <div class="container">
          {isLoading ? (<div>Loading</div>) : (data.map((product,key) => {
-                         return (<ProductDelete
+                         return (<ProductDelete 
                          key={key}
                          id={product.id}
                          title={product.nume}
@@ -115,7 +123,7 @@ const AdminProduct = props =>{
               
      
     {showForm && <Create></Create> }    
- 
+
     </div>
     
 }
