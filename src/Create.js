@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef} from "react";
 import "./Contact.css";
 import { db } from "./firebase";
 import "./Login.css";
@@ -15,13 +15,20 @@ export default function Create() {
   const [name, setName] = useState("");
   const [rating, setRating] = useState("");
   const [imagine, setImage] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [img, setImg] = useState();
 
-
+  const onImageChange = (e) => {
+    const [file] = e.target.files;
+    setImg(URL.createObjectURL(file));
+    console.log(file);
+  };
   
   function handleSubmit(e) {
     e.preventDefault();
-    
-    db.collection("products" )
+    console.log(img);
+    uploadFiles(img);
+    db.collection("products")
       .add({
         nume: name,
         imagine: imagine,
@@ -42,6 +49,10 @@ export default function Create() {
     setRating("");
     setImage("");
   }
+  const uploadFiles = (file) => {
+    
+    storage.ref(`files`).put(file).then(url => console.log(url));
+  };
   return (
     <div className="App">
       <form className="form" onSubmit={handleSubmit}>
@@ -55,10 +66,14 @@ export default function Create() {
         <label>Rating</label>
         <input placeholder="rating" onChange={(e) => setRating(e.target.value)} />
         <label>Imagine</label>
-        <input type="file" name="image" multiple onChange={(e) => setImage(e.target.value)} />
+        <input type="file" name="image" multiple onChange={onImageChange} />
         <button type="submit">Upload</button>
+        <img src={img} alt="" />
      
       </form>
     </div>
+    
   );
+  
+  
 }

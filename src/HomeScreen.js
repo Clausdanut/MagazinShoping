@@ -25,6 +25,7 @@ function HomeScreen({}) {
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
+    console.log(file)
     uploadFiles(file);
   };
 
