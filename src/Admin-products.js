@@ -112,7 +112,7 @@ const AdminProduct = props =>{
                          title={product.nume}
                          price={product.pret}
                          rating={product.rating}
-                         imagine={product.image}
+                         imagine={product.imagine}
                      />)   
                 
                      

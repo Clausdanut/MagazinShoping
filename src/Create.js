@@ -15,7 +15,6 @@ export default function Create() {
   const [rating, setRating] = useState("");
   const [imagine, setImage] = useState("");
   const [img, setImg] = useState();
-  const [url, setURL] = useState();
 
   const onImageChange = (e) => {
     const [file] = e.target.files;
@@ -24,20 +23,7 @@ export default function Create() {
 
    function handleSubmit(e) {
     e.preventDefault();
-    uploadFiles(img);
-
-    const timeout1 = setTimeout(() => {
-        storage
-        .ref("files")
-        .child(img.name)
-        .getDownloadURL()
-        .then((url) => {
-          setURL(url);
-          console.log(url);
-      });      
-    }, 3000);
-
-    const timeout2 = setTimeout(() => {
+    function postProduct(uri){
       db.collection("products")
       .add({
         nume: name,
@@ -45,7 +31,7 @@ export default function Create() {
         is_product: true,
         rating: Number(rating),
         id: Math.random(),
-        imagine:url
+        imagine:uri
       })
       .then(() => {
         alert("Mesaj trmis👍");
@@ -58,7 +44,18 @@ export default function Create() {
     setPrice("");
     setRating("");
     setImage("");
-  }, 8000);
+  }
+    uploadFiles(img);
+
+    const timeout1 = setTimeout(() => {
+        storage
+        .ref("files")
+        .child(img.name)
+        .getDownloadURL()
+        .then((url) => {
+          postProduct(url);
+      });      
+    }, 3000);
   }
   const uploadFiles = (file) => {
     storage
@@ -82,7 +79,7 @@ export default function Create() {
           onChange={(e) => setRating(e.target.value)}
         />
         <label>Imagine</label>
-        <input type="file" name="image" multiple onChange={onImageChange} />
+        <input type="file" name="image" onChange={onImageChange} />
         <button type="submit">Upload</button>
         <img src={img} alt="" />
       </form>
