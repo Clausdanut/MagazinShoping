@@ -32,7 +32,7 @@ function Product({id, title, image, price, rating, operation}) {
                 price: price,
                 rating: rating,
                 operations: operation,
-                
+                title:title
             },
         });
     };
