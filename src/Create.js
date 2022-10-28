@@ -27,7 +27,7 @@ export default function Create() {
       db.collection("products")
       .add({
         nume: name,
-        pret: price,
+        pret: Number(price),
         is_product: true,
         rating: Number(rating),
         id: Math.random(),

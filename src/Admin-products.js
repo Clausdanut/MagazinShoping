@@ -58,11 +58,11 @@ const AdminProduct = props =>{
       e.preventDefault();
       setLoader(true);
   
-      db.collection("contacts")
+      db.collection("products")
         .add({
           nume: nume,
           imagine: image,
-          pret: pret, 
+          pret: Number(pret),
           is_product : true,
           rating: rating,
         
