@@ -52,15 +52,7 @@ export default function AdminSidebar() {
                             class="fab fa-product-hunt"></i> Contact</Link>
                             
                     </li>
-                    <li>
-                            <Link to="/homescreen" data-toggle="collapse" aria-expanded="" class=""><i
-                            class=""></i>Adaugare Produse</Link>
-                            </li>
-                    {/* <li>
-                    <Link to="/productdelete" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="fab fa-product-hunt"></i> ProductDelete</Link>
-                            
-                    </li> */}
+                    
             
             
                 </ul>

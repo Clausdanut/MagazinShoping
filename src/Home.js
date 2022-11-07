@@ -30,28 +30,63 @@ function Home() {
   console.log(data);
 
   return (
-    <div className="custom-home">
-       {/* aICI ADAUG CONTINUT PENTU STILIZARE PAGINI */}
-      {/* PRODUS */}
-      <div className="home2">
-        {isLoading ? (
-          <div>Loading</div>
-        ) : (
-          data.map((product, key) => {
-            return (
-              <Product
-                key={key}
-                id={key}
-                title={product.nume}
-                price={product.pret}
-                rating={product.rating}
-                image={product.imagine}
-              />
-            );
-          })
-        )}
+    <div className="home1">
+      <div className="home__container">
+        <div class="section-header-image">
+          <div className="coloana1">
+          <h1 className="text1">
+            <span className="color_15">
+              <span className="color_14" >Resusable
+              </span>
+            </span>
+            <br></br>
+            <span className="color_15"></span>
+            <span className="text2">Face Masks
+            </span>
+          </h1>
+          <button className="button" type="button">Click Me!</button>
+          </div>
+        </div>
+        
+
+        <div className="section-products">
+          <div className="text4">
+            <h2 className="font_2"></h2>
+            <span className="text3">Most Popular
+            </span>
+            <div className="gelria1">
+              <ul>
+              
+              </ul>
+            </div>
+
+          </div>
+
+        <div className="products">
+          {isLoading ? (
+            <div>Loading</div>
+          ) : (
+            data.map((product, key) => {
+              return (
+                <Product
+                  key={key}
+                  id={key}
+                  title={product.nume}
+                  price={product.pret}
+                  rating={product.rating}
+                  image={product.imagine}
+                />
+              );
+            })
+          )}
+          </div>
+        </div>
+
+        <div className="section-cards-1"></div>
+        <div className="section-cards-2"></div>
+        <div className="section-images"></div>
+        <div class="footer"></div>
       </div>
-      {/* PRODUS */}
     </div>
   );
 }

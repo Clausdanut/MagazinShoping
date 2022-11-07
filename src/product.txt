@@ -38,9 +38,7 @@ function Product({ id, title, image, price, rating, operation }) {
   return (
     <div>
       {isDeleted ? (
-        <div className="products">
-
-        </div>
+        <div></div>
       ) : (
         <div className="product">
           <div className="product__info">

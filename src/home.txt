@@ -1,0 +1,153 @@
+import React from "react";
+import "./Home.css";
+import Product from "./Product";
+import { db } from "./firebase";
+import { useState } from "react";
+import { useEffect } from "react";
+
+function Home() {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  async function getData() {
+    setIsLoading(true);
+    let helperArr = [];
+    const products = db.collection("products");
+    const doc = await products.where("is_product", "==", true).get();
+    if (doc.empty) {
+      console.log("No such document!");
+    } else {
+      doc.forEach((doc) => {
+        helperArr.push(doc.data());
+      });
+      setData(helperArr);
+      setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(data);
+
+  return (
+    <div className="custom-home">
+      {/* aICI ADAUG CONTINUT PENTU */}
+      <head>
+        <title>shopping card</title>
+
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+      </head>
+      <body>
+        <div className="home">
+          <img
+            className="home__image"
+            src="https://images-na.ssl-images-amazon.com/images/G/01/adlp/builder/BFF-V1-01-Hero-D-5ff78a97-f4d3-4242-9344-c1f478aff592._CB428091778_QL85_V1_.jpg"
+            alt=""
+          />
+
+          <div className="home__row">
+            <Product
+              id="12321351"
+              title="The Blue Umbrella"
+              image="https://m.media-amazon.com/images/I/71JZ0neAP1L._AC_UY327_FMwebp_QL65_.jpg"
+              price={75}
+              rating={4}
+            />
+
+            <Product
+              id="12321352"
+              title="Apple iPad Pro (12.9-inch, Wi-Fi, 1TB) - Space Grey (4th Generation)"
+              image="https://images-na.ssl-images-amazon.com/images/I/811aBwuSuIL._SL1500_.jpg"
+              price={134900.0}
+              rating={5}
+            />
+          </div>
+          <div className="home__row">
+            <Product
+              id="12321353"
+              title="Alpino Natural Peanut Butter Crunch 1 KG (Unsweetened / Gluten Free / Non-GMO / Vegan)"
+              image="https://m.media-amazon.com/images/I/71n6gXQn79L._AC_UL480_FMwebp_QL65_.jpg"
+              price={379}
+              rating={4}
+            />
+
+            <Product
+              id="12321354"
+              title="OnePlus 8 Pro (Glacial Green 12GB RAM+256GB Storage)"
+              image="https://images-na.ssl-images-amazon.com/images/I/61n6Ovq6EdL._SL1500_.jpg"
+              price={59999.0}
+              rating={5}
+            />
+
+            <Product
+              id="12321355"
+              title="Sony WH-1000XM3 Industry Leading Wireless Noise Cancelling Headphones"
+              image="https://images-na.ssl-images-amazon.com/images/I/61D4Z3yKPAL._SL1500_.jpg"
+              price={24990.0}
+              rating={4}
+            />
+          </div>
+          <div className="home__row">
+            <Product
+              id="12321356"
+              title="Furny Castilla L Shape Sofa Set -RHS 6 Seater Sofa (Cream-Brown)"
+              image="https://images-na.ssl-images-amazon.com/images/I/61leoBbyn2L._SL1100_.jpg"
+              price={24449.0}
+              rating={4}
+            />
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="product_img"></div>
+          <div class="Product_details">
+            <span class="Name">New Apple iphone 11 (128GB) - purple </span>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p>6.1-inch (15.5cm) diagonal Liquid Retina HD LCD Display</p>
+            <div class="button">
+              <span class="Price">₹ 58990.00</span>
+              <div class="btn cart">Buy Now</div>
+              <div class="btn Bookmark">
+                <i class="fa fa-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+      {/* PRODUS */}
+      <div className="home2">
+        {isLoading ? (
+          <div>Loading</div>
+        ) : (
+          data.map((product, key) => {
+            return (
+              <Product
+                key={key}
+                id={key}
+                title={product.nume}
+                price={product.pret}
+                rating={product.rating}
+                image={product.imagine}
+              />
+            );
+          })
+        )}
+      </div>
+      {/* PRODUS */}
+    </div>
+  );
+}
+
+export default Home;

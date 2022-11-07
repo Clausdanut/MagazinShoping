@@ -34,13 +34,16 @@ function Admin() {
 
 
     return (
-        <div className='login'> 
-            <Link to='/' style={{ textDecoration: "none" }}>
-                <div className="login__logo">
-                    <StorefrontIcon className="login__logoImage" fontSize="large" />
-                    <h2 className="login__logoTitle">eSHOP</h2>
-                </div>
-            </Link>
+        <div className="login">
+        <div className="home">
+   </div>
+     <Link to="/">
+       <img
+         className="login__logo"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+         alt=""
+       />
+     </Link>
 
             <div className='login__container'>
                 <h1>Sign-in</h1>

@@ -1,56 +1,71 @@
-import React from "react";
-import "./Header.css";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import StorefrontIcon from "@material-ui/icons/Storefront";
-import SearchIcon from "@material-ui/icons/Search";
-import { Link } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
-import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
+import React from 'react'
+import './Header.css'
+import { Link } from 'react-router-dom'
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { useStateValue } from './StateProvider'
+import { auth } from './firebase'
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
-  return (
-    <div className="header">
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <div className="header__logo">
-          <StorefrontIcon className="header__logoImage" fontSize="large" />
-          <h2 className="header__logoTitle">eShop</h2>
-        </div>
-      </Link>
 
-      <div className="header__search">
-        <input type="text" className="header__searchInput" />
-        <SearchIcon className="header__searchIcon" />
-      </div>
+    const [{ basket, user }, dispatch] = useStateValue()
 
-      <div className="header__nav">
-        <Link to="/login" style={{ textDecoration: "none" }}>
-          <div className="nav__item">
-            <span className="nav__itemLineOne">Hello Guest</span>
-            <span className="nav__itemLineTwo">Sign In</span>
-          </div>
-        </Link>
-        <div className="nav__item">
-          <span className="nav__itemLineOne">Your</span>
-          <span className="nav__itemLineTwo">Shop</span>
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
+
+    return (
+        <div className="header">
+            <Link to="/">
+                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" />
+            </Link>
+            <div className="header__search">
+                <input type="text" className="header__searchInput" />
+                <SearchIcon className="header__searchIcon" />
+            </div>
+
+            <div className="header__nav">
+                <Link to={!user && '/login'} className="header__link">
+                    <div onClick={handleAuthentication} className="header__option">
+                        <span className="header__optionLineOne">Hello {user ? user.email : 'Guest'}</span>
+                        <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+                    </div>
+                </Link>
+
+                <Link to="/orders" className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">Returns</span>
+                        <span className="header__optionLineTwo">& Orders</span>
+                    </div>
+                </Link>
+
+
+                <Link to="/" className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">Your</span>
+                        <span className="header__optionLineTwo">Prime</span>
+                    </div>
+                </Link>
+
+                <Link to="/checkout" className="header__link">
+                    <div className="header__optionBasket">
+                        <div className="header__optionLineOne">
+                            <ShoppingBasketIcon />
+                        </div>
+                        <div className="header__optionLineTwo">
+                            <span className="header__basketCount">{basket?.length}</span>
+                        </div>
+
+                    </div>
+                </Link>
+
+
+            </div>
+
         </div>
-        <Link to="/checkout" style={{ textDecoration: "none" }}>
-          <div className="nav__itemBasket">
-            <ShoppingBasketIcon />
-            <span className="nav__itemLineTwo nav__basketCount">
-              {basket.length}
-            </span>
-          </div>
-        </Link>
-        <Link to="/contact" style={{ textDecoration: "Contact" }}>
-          <div className="nav1__itemBasket">
-            <PermContactCalendarIcon />
-            <span className="nav__itemLineTwo nav__basketCount">Contact</span>
-          </div>
-        </Link>
-      </div>
-    </div>
-  );
+    )
 }
 
-export default Header;
+export default Header
