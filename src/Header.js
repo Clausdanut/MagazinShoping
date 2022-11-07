@@ -18,14 +18,45 @@ function Header() {
 
     return (
         <div className="header">
+            
             <Link to="/">
-                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" />
+               <div className='_1u8sp'>
+                <p className='p1'>
+                Shop
+                </p>
+               </div>
             </Link>
-            <div className="header__search">
-                <input type="text" className="header__searchInput" />
-                <SearchIcon className="header__searchIcon" />
+            <Link to="/">
+               <div className='_1u8sp'>
+                <p className='p1'>
+                FAQ
+                </p>
+               </div>
+            </Link>
+            <Link to="/contact">
+               <div className='_1u8sp'>
+                <p className='p1'>
+                Contact
+                </p>
+               </div>
+            </Link>
+           
+            <Link to="/">
+               <div className='container'>
+                <p className='font_4'>
+                
+                VISAGE
+                </p>
+               </div>
+            </Link>
+           
+            
+            <div className="search">
+                <input type="text" className="searchTerm" placeholder="What are you looking for?"/>
+                <SearchIcon className="searchButton" />
+                <i class="fa fa-search"></i>
             </div>
-
+           
             <div className="header__nav">
                 <Link to={!user && '/login'} className="header__link">
                     <div onClick={handleAuthentication} className="header__option">

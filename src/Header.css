@@ -1,5 +1,9 @@
 .header {
-    background-color: #131921;
+    font-family: Arial;
+    margin: 0;
+  }
+.header {
+    background-color: #ffff;
     display: flex;
     align-items: center;
     position: sticky;
@@ -19,14 +23,17 @@
 .header__search {
     display: flex;
     flex: 1;
+    align-items: center;
+    border-radius: 24px;
+    margin: 0 10px;
 }
 
-.header__searchInput {
-    height: 12px;
+ .header__searchInput {
+    height: 26px;
     padding: 10px;
     border: none;
     width: 100%;
-}
+} 
 
 .header__searchIcon {
     padding: 5px;
@@ -35,7 +42,7 @@
 }
 
 .header__link {
-    color: white;
+    color: #2e2e2e;
     text-decoration: none;
 }
 
@@ -69,4 +76,82 @@
     margin-left: 10px;
     margin-right: 10px;
 
+}
+.p1{
+    text-align: left;
+    line-height: 50px;
+    display: inline-block;
+    padding: 0 10px;
+    color: rgb(var(--txt,var(--color_15)));
+    transition: var(--trans,color .4s ease 0s);
+    font-family: unset;
+    color: black;
+}
+
+.font_3{
+    line-height: 1.2em;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0.31em;
+    margin-left: 490px;
+    font-family: math;
+    color: black;
+}
+.search {
+   
+    margin-left: 570px;
+    position: relative;
+    display: flex;
+    
+  }
+  
+  .searchTerm {
+   
+    border: 3px solid black;
+    border-right: none;
+    padding: 5px;
+    height: 24px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: black;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid black;
+    background: black;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .font_4{
+    
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0.31em;
+    margin-left: 490px;
+    font-family: math;
+  padding-left: 0px;
+   
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 30px;
 }
