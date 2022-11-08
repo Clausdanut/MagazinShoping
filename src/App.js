@@ -17,20 +17,11 @@ import HomeScreen from "./HomeScreen";
 import ContactEdit from "./ContactEdit";
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider';
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
-import Payment from './Payment';
-import Orders from './Orders';
+import Payment from './Payment'
+import Orders from './Orders'
 import React, { useEffect } from 'react';
-import Footer from "./Footer";
-
-
-
-
-
-
-
-
 const promise = loadStripe(
   "pk_test_51HPvesLv2wbjCv6jorIW0Jwaj6EZNvoCM9f1MiXoWxeqKNAzQMNzkz4sKMJ7FAfm4BTqg6RjQuJCsDCjJzxDSDVT00hE9xbBLW"
 )
@@ -66,7 +57,6 @@ function App() {
             <Header />
             <Orders />
           </Route>
-          
           <Route path="/payment">
             <Header />
             <Elements stripe={promise}>
@@ -81,12 +71,9 @@ function App() {
             <Header />
             <Checkout />
           </Route>
-          <Route path="/login">
-          </Route>
           <Route path="/contact">
             <Header /> 
             <Contact />  
-
 
           </Route>
           <Route path="/admin-panou">
@@ -139,7 +126,6 @@ function App() {
           <Create />
           </div>
           </Route>
-         
           <Route path="/checkout">
             <Checkout />
           </Route>
@@ -147,7 +133,6 @@ function App() {
           <Route path="/">    
             <Header />
             <Home />
-            <Footer />
           </Route>
  
         

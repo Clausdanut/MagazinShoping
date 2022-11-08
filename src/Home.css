@@ -43,11 +43,10 @@
 }
 .section-header-image{
   background-image: url("https://static.wixstatic.com/media/5743b5_2661f76c3b8b451e94e7d18e03a64176~mv2.jpg/v1/fill/w_1503,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5743b5_2661f76c3b8b451e94e7d18e03a64176~mv2.jpg");
-  
-  /* height: 640px; */
+  height: 80vh;
   object-fit: cover;
   object-position: 50% 50%;
-  padding: 100px;
+  padding: 150px 100px;
 }
 .baner12{
   position: static;
@@ -72,11 +71,6 @@
 .button:hover {
   background-color:#fd9d79;
   color: white;
-}
-
-.coloana1{
-  padding-top: 190px;
-    margin-left: 163px;
 }
 
 .home__container{

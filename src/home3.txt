@@ -55,16 +55,14 @@ function Home() {
             <span className="text3">Most Popular
             </span>
             <div className="gelria1">
-              <ul>
-              
-              </ul>
+            
             </div>
 
           </div>
 
-        <div className="products">
+
           {isLoading ? (
-            <div>Loading</div>
+            <div className="products">Loading</div>
           ) : (
             data.map((product, key) => {
               return (
@@ -79,7 +77,6 @@ function Home() {
               );
             })
           )}
-          </div>
         </div>
 
         <div className="section-cards-1"></div>
@@ -90,5 +87,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
