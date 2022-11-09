@@ -4,6 +4,9 @@ import Product from "./Product";
 import { db } from "./firebase";
 import { useState } from "react";
 import { useEffect } from "react";
+import Svg1 from "./Svg1";
+import Svg2 from "./Svg2";
+import Svg3 from "./Svg3";
 
 function Home() {
   const [data, setData] = useState();
@@ -31,7 +34,7 @@ function Home() {
 
   return (
     <div className="home1">
-      <div className="home__container">
+      <div className="home__container boxed">
         <div class="section-header-image">
           <div className="coloana1">
             <h1 className="text1">
@@ -82,12 +85,9 @@ function Home() {
         <div className="section-cards-1">
           <div class="container">
             <div className="row">
-              <div className="col-m">
-                <img
-                  className="img2"
-                  src="https://www.sublimet.com/6237-large_default/reusable-hygienic-black-face-mask.jpg"
-                ></img>
-                <h1>Protecţie:</h1>
+              <div className="col-m col3">
+              <Svg3 className="svg1"></Svg3>
+                <h1 className="text7">Protecţie:</h1>
                 <p className="paragraf1">
                   <ul>
                     <li>Țesătură hidrofugata pe ambele părți </li>
@@ -98,12 +98,9 @@ function Home() {
                 </p>
               </div>
 
-              <div className="col-m">
-                <img
-                  className="img2"
-                  src="https://www.globalvifel.com/1592-large_default/reusable-hygienic-black-face-mask.jpg"
-                ></img>
-                <h1>Informații suplimentare</h1>
+              <div className="col-m col4">
+                <Svg2 className="svg2"></Svg2>
+                <h1 className="text7">Informații suplimentare</h1>
                 <p className="paragraf1">
                   <ul>
                     <li> Eficiență de filtrare cu aerosoli: 96%.</li>
@@ -125,12 +122,9 @@ function Home() {
                 </p>
               </div>
 
-              <div className="col-m">
-                <img
-                  className="img2"
-                  src="https://www.sublimet.com/6237-large_default/reusable-hygienic-black-face-mask.jpg"
-                ></img>
-                <h1>Mască de față neagră igienă reutilizabilă</h1>
+              <div className="col-m col3">
+              <Svg1 className="svg3"></Svg1>
+                <h1 className="text7">Mască de față neagră igienă reutilizabilă</h1>
                 <p className="paragraf1">
                   Măștile de față reutilizabile sunt realizate din țesătură
                   impermeabilă și respectă reglementările UNE 0065/20. Are si un
@@ -171,7 +165,7 @@ function Home() {
               </div>
 
               <div class="col">
-              <img
+                <img
                   className="img6"
                   src="https://static.wixstatic.com/media/5743b5_8f39b268f4bf477ca1b79062233ff327~mv2.jpg/v1/fill/w_892,h_680,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5743b5_8f39b268f4bf477ca1b79062233ff327~mv2.jpg"
                 ></img>
