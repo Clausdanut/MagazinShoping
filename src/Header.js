@@ -35,12 +35,15 @@ function Header() {
         </Link>
       </div>
 
-      <Link to="/">
+      <Link className="linc1" to="/">
         <div className="container">
           <p className="font_4">VISAGE</p>
         </div>
       </Link>
 
+    
+
+      <div className="header__nav">
       <div className="search">
         <input
           type="text"
@@ -50,8 +53,6 @@ function Header() {
         <SearchIcon className="searchButton" />
         <i class="fa fa-search"></i>
       </div>
-
-      <div className="header__nav">
         <Link to={!user && "/login"} className="header__link">
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
@@ -63,19 +64,9 @@ function Header() {
           </div>
         </Link>
 
-        <Link to="/orders" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Returns</span>
-            <span className="header__optionLineTwo">& Orders</span>
-          </div>
-        </Link>
+        
 
-        <Link to="/" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Your</span>
-            <span className="header__optionLineTwo">Prime</span>
-          </div>
-        </Link>
+        
 
         <Link to="/checkout" className="header__link">
           <div className="header__optionBasket">

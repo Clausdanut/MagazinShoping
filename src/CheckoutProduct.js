@@ -2,7 +2,7 @@
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 import React, { forwardRef } from 'react' 
-const  CheckoutProduct  = forwardRef(({ id, title, image, price, rating,hideButton }, ref)=> {
+const  CheckoutProduct  = forwardRef(({ id, title, image, price, rating, })=> {
     const [{ basket }, dispatch] = useStateValue();
   
     console.log(id, title, image, price, rating);

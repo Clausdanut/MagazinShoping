@@ -22,6 +22,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import Payment from './Payment'
 import Orders from './Orders'
 import React, { useEffect } from 'react';
+
 const promise = loadStripe(
   "pk_test_51HPvesLv2wbjCv6jorIW0Jwaj6EZNvoCM9f1MiXoWxeqKNAzQMNzkz4sKMJ7FAfm4BTqg6RjQuJCsDCjJzxDSDVT00hE9xbBLW"
 )

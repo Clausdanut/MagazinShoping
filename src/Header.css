@@ -149,7 +149,12 @@
   padding-left: 0px;
 
   text-align: center;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   font-size: 30px;
+}
+
+.linc1{
+  text-decoration:none;
+  width: 33%;
 }

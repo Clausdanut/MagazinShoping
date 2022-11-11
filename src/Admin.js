@@ -15,7 +15,7 @@ function Admin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const signIn = e => {
+    const Submit = e => {
         e.preventDefault();
 
         auth
@@ -34,6 +34,7 @@ function Admin() {
 
 
     return (
+        <div className='section1'>
         <div className="login">
         <div className="home">
    </div>
@@ -44,27 +45,29 @@ function Admin() {
          alt=""
        />
      </Link>
-
-            <div className='login__container'>
-                <h1>Sign-in</h1>
-
-                <form>
-                    <h5>E-mail</h5>
-                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
-
-                    <h5>Password</h5>
-                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
-
-                    <button type='submit' className='login__signInButton' onClick={signIn}>Sign In</button>
-                </form>
-
-                <p>
-                    By signing-in you agree to the eShop Website Conditions of Use & Sale. Please
-                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-                </p>
-
-                
-            </div>
+     <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
+      <label>Email</label>
+    </div>
+    <div class="user-box">
+    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
+      <label>Password</label>
+    </div>
+   
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <button type='submit' className='btn1' onClick={Submit}>Submit</button>
+    </a>
+  </form>
+</div>
+          
+        </div>
         </div>
     )
 }
