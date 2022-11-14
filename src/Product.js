@@ -42,8 +42,9 @@ function Product({ id, title, image, price, rating, operation ,slug}) {
 
         </div>
       ) : (
-        <a  className="slug1" href={`/products/${slug}`}>
+        
         <div className="product">
+          <a  className="slug1" href={`/products/${slug}`}>
             <img src={image} />
           <div className="product__info">
             <p className="product__name">{title}</p>
@@ -61,11 +62,11 @@ function Product({ id, title, image, price, rating, operation ,slug}) {
           </div>
 
         
-
+          </a>
           <button className="add_to__cart" onClick={addToBasket}>Add to Basket</button>
 
         </div>
-        </a>
+      
       )}
     </div>
   );

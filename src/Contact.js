@@ -43,6 +43,19 @@ const Contact = () => {
   };
 
   return (
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
     <form className="form" onSubmit={handleSubmit}>
       <h1>Contact Us 🤳</h1>
