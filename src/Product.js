@@ -42,7 +42,7 @@ function Product({ id, title, image, price, rating, operation ,slug}) {
 
         </div>
       ) : (
-        <a href={`/products/${slug}`}>
+        <a  className="slug1" href={`/products/${slug}`}>
         <div className="product">
             <img src={image} />
           <div className="product__info">

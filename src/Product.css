@@ -166,6 +166,9 @@
   border-radius: 15px;
   box-shadow: 0 0px #999;
 }
+.slug1{
+  text-decoration: none;
+}
 @keyframes btn-anim1 {
   0% {
     left: -100%;

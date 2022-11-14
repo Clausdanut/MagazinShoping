@@ -19,8 +19,8 @@ import masca8 from "./Imagini/Poza8.jpg";
 function Home() {
   function convertToSlug(Text) {
     return Text.toLowerCase()
-               .replace(/ /g, '-')
-               .replace(/[^\w-]+/g, '');
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, "");
   }
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -191,41 +191,44 @@ function Home() {
           <div class="column">
             <h2 className="paragraf2">Shop</h2>
             <div className="text13">
-            <p>Shop all</p>
-            <p>Adults</p>
-            <p>Kids</p>
+              <p>Shop all</p>
+              <p>Adults</p>
+              <p>Kids</p>
             </div>
           </div>
           <div class="column">
             <h2 className="paragraf2">Policy</h2>
             <div className="text13">
-            <p>Shipping & Returns</p>
-            <p>Store Policy</p>
-            <p>Payment Methods</p>
-            <p>FAQ</p>
+              <p>Shipping & Returns</p>
+              <p>Store Policy</p>
+              <p>Payment Methods</p>
+              <p>FAQ</p>
             </div>
           </div>
           <div class="column">
             <h2 className="paragraf2">Contact Us</h2>
             <div className="text13">
-            <p>Tel. 123-456-7890</p>
-            <p>info@mysite.com</p>
-            <div>
-              
-            <ul className="ul1">
-              <img
-                src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4057345bcf57474b96976284050c00df.png"
-                alt=""
-              />
-              <img
-                src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1aa082f7c0747168d9cf43e77046142.png"
-                alt=""
-              />
-              <img src="https://static.wixstatic.com/media/9e47c827082f40bdb54d0cd16c3b28f6.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9e47c827082f40bdb54d0cd16c3b28f6.png" alt="" />
-            </ul>
-            </div>
+              <p>Tel. 123-456-7890</p>
+              <p>info@mysite.com</p>
+              <div>
+                <ul className="ul1">
+                  <img
+                    src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4057345bcf57474b96976284050c00df.png"
+                    alt=""
+                  />
+                  <img
+                    src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1aa082f7c0747168d9cf43e77046142.png"
+                    alt=""
+                  />
+                  <img
+                    src="https://static.wixstatic.com/media/9e47c827082f40bdb54d0cd16c3b28f6.png/v1/fill/w_24,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9e47c827082f40bdb54d0cd16c3b28f6.png"
+                    alt=""
+                  />
+                </ul>
+              </div>
             </div>
           </div>
+          <div class="column-ultima"></div>
         </div>
       </div>
     </div>

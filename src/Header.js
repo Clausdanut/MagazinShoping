@@ -34,11 +34,7 @@ function Header() {
             <p className="p1">Contact</p>
           </div>
         </Link>
-        <Link to="/masca1">
-          <div className="_1u8sp">
-            <p className="p1">Contact</p>
-          </div>
-        </Link>
+      
       </div>
 
       <Link className="linc1" to="/">

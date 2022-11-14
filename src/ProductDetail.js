@@ -45,6 +45,8 @@ function ProductDetail() {
         <div className="product-details">
           <h1>{product.nume}</h1>
           <img src={product.imagine} />
+          <h1>{product.pret}<small>$</small></h1>
+          <h1>{product.rating }</h1>
         </div>
       )}
     </div>
