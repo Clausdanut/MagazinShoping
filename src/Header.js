@@ -34,6 +34,11 @@ function Header() {
             <p className="p1">Contact</p>
           </div>
         </Link>
+        <Link to="/masca1">
+          <div className="_1u8sp">
+            <p className="p1">Contact</p>
+          </div>
+        </Link>
       </div>
 
       <Link className="linc1" to="/">
@@ -55,6 +60,8 @@ function Header() {
         <i class="fa fa-search"></i>
       </div>
         <Link to={!user && "/login"} className="header__link">
+
+        <img  className="logo7" src="https://freesvg.org/img/abstract-user-flat-4.png" alt="" />
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
                {user ? user.email : ""}
@@ -72,7 +79,7 @@ function Header() {
         <Link to="/checkout" className="header__link">
           <div className="header__optionBasket">
             <div className="header__optionLineOne">
-            <ShoppingBasketIcon />
+           <img className="logo7" src="https://cdn.icon-icons.com/icons2/933/PNG/512/shopping-cart_icon-icons.com_72552.png" alt="" />
             </div>
             <div className="header__optionLineTwo">
               <span className="header__basketCount">{basket?.length}</span>

@@ -17,6 +17,11 @@ import masca7 from "./Imagini/Poza7.jpg";
 import masca8 from "./Imagini/Poza8.jpg";
 
 function Home() {
+  function convertToSlug(Text) {
+    return Text.toLowerCase()
+               .replace(/ /g, '-')
+               .replace(/[^\w-]+/g, '');
+  }
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   async function getData() {
@@ -79,6 +84,7 @@ function Home() {
                     price={product.pret}
                     rating={product.rating}
                     image={product.imagine}
+                    slug={convertToSlug(product.nume)}
                   />
                 );
               })

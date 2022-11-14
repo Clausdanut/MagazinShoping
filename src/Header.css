@@ -64,7 +64,7 @@
 }
 
 .header__optionLineTwo {
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -104,16 +104,18 @@
 .search {
   position: relative;
   display: flex;
+  
+    border-radius: 8px; color: white;
+    padding: 4px;
+    border-radius: 8px; color: white;
+    border: 1px solid black;
 }
 
+
 .searchTerm {
-  border: 3px solid black;
-  border-right: none;
   padding: 5px;
   height: 24px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: black;
+  border: none;
 }
 
 .searchTerm:focus {
@@ -123,14 +125,15 @@
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid black;
-  background: black;
+ 
+  background: white;
   text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
+  color: #111;
+
   cursor: pointer;
   font-size: 10px;
 }
+
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
@@ -157,4 +160,22 @@
 .linc1{
   text-decoration:none;
   width: 33%;
+}
+.MuiSvgIcon-root searchButton{
+  fill: black;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    border: none;
+
+}
+.logo7{
+  height: 30px;
+    width: 100%;
+    object-fit: cover;
+    padding: 5px;
 }

@@ -4,7 +4,7 @@ import { useStateValue } from "./StateProvider";
 import { db } from "./firebase";
 import { useState } from "react";
 
-function Product({ id, title, image, price, rating, operation }) {
+function Product({ id, title, image, price, rating, operation ,slug}) {
   const [isDeleted, setIsDeleted] = useState(false);
   const [isEdit, setIsEdu] = useState(false);
   const [state, dispatch] = useStateValue();
@@ -42,6 +42,7 @@ function Product({ id, title, image, price, rating, operation }) {
 
         </div>
       ) : (
+        <a href={`/products/${slug}`}>
         <div className="product">
             <img src={image} />
           <div className="product__info">
@@ -64,6 +65,7 @@ function Product({ id, title, image, price, rating, operation }) {
           <button className="add_to__cart" onClick={addToBasket}>Add to Basket</button>
 
         </div>
+        </a>
       )}
     </div>
   );
