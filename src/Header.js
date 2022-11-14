@@ -5,6 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+import Svg4 from "./Svg4"
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -56,10 +57,10 @@ function Header() {
         <Link to={!user && "/login"} className="header__link">
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
-              Hello {user ? user.email : "Guest"}
+               {user ? user.email : ""}
             </span>
             <span className="header__optionLineTwo">
-              {user ? "Sign Out" : "Sign In"}
+              {user ? "" : ""}
             </span>
           </div>
         </Link>
@@ -71,7 +72,7 @@ function Header() {
         <Link to="/checkout" className="header__link">
           <div className="header__optionBasket">
             <div className="header__optionLineOne">
-              <ShoppingBasketIcon />
+            <ShoppingBasketIcon />
             </div>
             <div className="header__optionLineTwo">
               <span className="header__basketCount">{basket?.length}</span>

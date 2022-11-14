@@ -114,7 +114,9 @@
   background-repeat: no-repeat;
   background-position: center;
   box-sizing: border-box;
+  gap: 2rem;
 }
+
   
 /* .card1{
   position: static;
@@ -182,6 +184,13 @@
 .paragraf1{
   text-align: center;
   font-size: 16px;
+  
+}
+.paragraf2{
+  text-align: center;
+  font-size: 24px;
+  color: blue;
+  padding: 30px;
   
 }
 
@@ -300,4 +309,54 @@
 }
 .text4{
   margin: 20px;
+}
+.col10{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  background-color: #FDF8EC;
+  padding: 20px;
+
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; 
+  border:1px solid;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.masca1{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.ul1{
+  padding: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.text13{
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 19px;
+  /* padding: 4rem; */
+  letter-spacing: 0.03em;
+  height: 100%;
+}
+.paragraf6{
+  padding-top: 133px;
+  text-align: center;
+  letter-spacing: 0.31em;
 }
