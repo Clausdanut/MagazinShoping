@@ -698,7 +698,12 @@ background-color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
+  cursor:pointer;
+}
+
+.login-box form a button{
+  cursor:pointer;
 }
 
 .login-box a:hover {

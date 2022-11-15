@@ -32,11 +32,6 @@ const AdminContact = (props) => {
 
   return (
     <div>
-      <div className="cap-tabel-admin">
-        <div>NUME</div>
-        <div>EMAIL</div>
-        <div>MESAJ</div>
-      </div>
       {isLoading ? (
         <div>Loading</div>
       ) : (

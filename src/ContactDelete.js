@@ -32,9 +32,9 @@ console.log(id);
                                <div className="text-formular">
                                  <table>
                                    <tr>
-                                     <p>{nume}</p>
-                                     <p>{email}</p>
-                                     <p>{message}</p>
+                                     <p>Nume: {nume}</p>
+                                     <p>Email: {email}</p>
+                                     <p>Mesaj: {message}</p>
                                    </tr>
                                  </table>
                                </div>

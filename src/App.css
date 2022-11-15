@@ -3,3 +3,15 @@
     margin: 0;
     font-family: 'Sono', sans-serif;
   }
+
+  .product-delete{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-delete img{
+    width: 100px;
+    height: 100px;
+  }

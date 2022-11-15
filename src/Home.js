@@ -229,7 +229,11 @@ function Home() {
               </div>
             </div>
           </div>
-          <div class="column-ultima"></div>
+          <div class="column-ultima">
+            <p className="paragraf20">
+            © 2023 by Visage. Proudly created with Wix.com
+            </p>
+          </div>
         </div>
       </div>
     </div>

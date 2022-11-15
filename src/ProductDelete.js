@@ -38,14 +38,14 @@ function ProductDelete({ id, title, imagine, price, rating, operation }) {
       {isDeleted ? (
         <div></div>
       ) : (
-        <div className="product">
-          <div className="product__info">
+        <div className="product-delete">
+          <div className="">
             <p>{title}</p>
-            <p className="product__price">
+            <p className="">
               <small>$</small>
               <strong>{price}</strong>
             </p>
-            <div className="product__rating">
+            <div className="">
               {Array(rating)
                 .fill()
                 .map((_, i) => (
@@ -56,7 +56,6 @@ function ProductDelete({ id, title, imagine, price, rating, operation }) {
 
           <img src={imagine} />
 
-          <button onClick={addToBasket}>Add to Basket</button>
           <span onClick={deleteProduct} className="delete">
             Delete
           </span>

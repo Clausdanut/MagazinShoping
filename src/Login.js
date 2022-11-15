@@ -74,9 +74,13 @@ function Login() {
               Interest-Based Ads Notice.
             </p>
 
-            <button className="login__registerButton" onClick={register}>
+            <a className="login__registerButton" onClick={register}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Create your eShop Account
-            </button>
+            </a>
           </form>
         </div>
       </div>
