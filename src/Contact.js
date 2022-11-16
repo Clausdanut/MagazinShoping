@@ -43,23 +43,13 @@ const Contact = () => {
   };
 
   return (
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
+    <div className="contact-1">
+      <div class="contact-2">
+      <iframe className="harta1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.7788461674863!2d26.09643601535046!3d44.437698509365696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff43f6fb02c7%3A0x26c89e2c4dcf30b5!2sLINK%20Academy!5e0!3m2!1sro!2sro!4v1668605989238!5m2!1sro!2sro <iframe src="ht allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
     <form className="form" onSubmit={handleSubmit}>
-      <h1>Contact Us 🤳</h1>
-
+      <h1>Contact </h1>
+      
       <label>Name</label>
       <input
         placeholder="Name"
@@ -88,6 +78,7 @@ const Contact = () => {
         Submit
       </button>
     </form>
+    </div>
   );
 };
 

@@ -85,6 +85,7 @@ function Home() {
                     rating={product.rating}
                     image={product.imagine}
                     slug={convertToSlug(product.nume)}
+                    overlay={product.overlay}
                   />
                 );
               })
@@ -231,7 +232,7 @@ function Home() {
           </div>
           <div class="column-ultima">
             <p className="paragraf20">
-            © 2023 by Visage. Proudly created with Wix.com
+            © 2023 by Visage. 
             </p>
           </div>
         </div>

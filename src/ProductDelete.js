@@ -34,34 +34,23 @@ function ProductDelete({ id, title, imagine, price, rating, operation }) {
   console.log(id);
 
   return (
-    <div>
+    <>
       {isDeleted ? (
         <div></div>
       ) : (
-        <div className="product-delete">
-          <div className="">
-            <p>{title}</p>
-            <p className="">
-              <small>$</small>
-              <strong>{price}</strong>
-            </p>
-            <div className="">
-              {Array(rating)
-                .fill()
-                .map((_, i) => (
-                  <p>⭐</p>
-                ))}
-            </div>
-          </div>
-
-          <img src={imagine} />
-
-          <span onClick={deleteProduct} className="delete">
+        <tr className="product-del-table">
+          <td> {title}</td>
+          <td> {rating}</td>
+          <td> {price}</td>
+          <td>
+            <img src={imagine} />{" "}
+          </td>
+          <td onClick={deleteProduct} className="delete">
             Delete
-          </span>
-        </div>
+          </td>
+        </tr>
       )}
-    </div>
+    </>
   );
 }
 

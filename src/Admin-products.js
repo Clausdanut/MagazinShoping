@@ -87,23 +87,31 @@ const AdminProduct = (props) => {
 
   return (
     <div class="container">
-      {isLoading ? (
-        <div>Loading</div>
-      ) : (
-        data.map((product, key) => {
-          return (
-            <ProductDelete
-              key={key}
-              id={product.id}
-              title={product.nume}
-              price={product.pret}
-              rating={product.rating}
-              imagine={product.imagine}
-            />
-          );
-        })
-      )}
-
+      <table>
+        <tr className="product-del-table">
+          <td>Nume</td>
+          <td>Rating</td>
+          <td>Pret</td>
+          <td>Imagine</td>
+          <td>Delete</td>
+        </tr>
+        {isLoading ? (
+          <div>Loading</div>
+        ) : (
+          data.map((product, key) => {
+            return (
+              <ProductDelete
+                key={key}
+                id={product.id}
+                title={product.nume}
+                price={product.pret}
+                rating={product.rating}
+                imagine={product.imagine}
+              />
+            );
+          })
+        )}
+      </table>
       {showForm && <Create></Create>}
     </div>
   );

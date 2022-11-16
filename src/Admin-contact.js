@@ -32,20 +32,32 @@ const AdminContact = (props) => {
 
   return (
     <div>
-      {isLoading ? (
-        <div>Loading</div>
-      ) : (
-        data.map((contact) => {
-          return (
-            <ContactDelete
-              nume={contact.name}
-              message={contact.message}
-              email={contact.email}
-              id={contact.id}
-            ></ContactDelete>
-          );
-        })
-      )}
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Nume</th>
+            <th>Email</th>
+            <th>Mesaj</th>
+            <th>Sterge</th>
+          </tr>
+        </thead>
+        <tbody>
+            {isLoading ? (
+              <div>Loading</div>
+            ) : (
+              data.map((contact) => {
+                return (
+                  <ContactDelete
+                    nume={contact.name}
+                    message={contact.message}
+                    email={contact.email}
+                    id={contact.id}
+                  ></ContactDelete>
+                );
+              })
+            )}
+        </tbody>
+      </table>
     </div>
   );
 };

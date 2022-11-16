@@ -80,6 +80,7 @@ export default function Create() {
         />
         <label>Imagine</label>
         <input type="file" name="image" onChange={onImageChange} />
+        
         <button type="submit">Upload</button>
         <img src={img} alt="" />
       </form>

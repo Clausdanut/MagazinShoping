@@ -4,48 +4,40 @@ import { useStateValue } from "./StateProvider";
 import { db } from "./firebase";
 import { useState } from "react";
 
-
-
-
-function ContactDelete({id, nume, email, message }) {
-    const [isDeleted , setIsDeleted] = useState(false);
-    const [state, dispatch] = useStateValue();
-    async function deleteContact(){
-        const contact = db.collection('contacts');
-        const doc = contact.where('id','==',id);
-        if(!isDeleted){
-            doc.get().then(function(querySnapshot){
-                querySnapshot.forEach(function(doc) {
-                    doc.ref.delete();
-                    setIsDeleted(true);
-                  });            
-            });
-        }
+function ContactDelete({ id, nume, email, message }) {
+  const [isDeleted, setIsDeleted] = useState(false);
+  const [state, dispatch] = useStateValue();
+  async function deleteContact() {
+    const contact = db.collection("contacts");
+    const doc = contact.where("id", "==", id);
+    if (!isDeleted) {
+      doc.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          doc.ref.delete();
+          setIsDeleted(true);
+        });
+      });
     }
-    
-console.log(id);
+  }
 
-        return (
-            <div>
-                {isDeleted ? (<div></div>) : (
-                               <div className="contact-admin1">
-                               <div className="text-formular">
-                                 <table>
-                                   <tr>
-                                     <p>Nume: {nume}</p>
-                                     <p>Email: {email}</p>
-                                     <p>Mesaj: {message}</p>
-                                   </tr>
-                                 </table>
-                               </div>
-                               <span onClick={deleteContact} className="delete">Delete</span>
-                             </div>
-                    
-                    
-                )}
-                
-            </div>
-        );
-    }
+  console.log(id);
 
-export default ContactDelete
+  return (
+    <>
+      {isDeleted ? (
+        <div></div>
+      ) : (
+        <tr>
+          <td> {nume}</td>
+          <td> {email}</td>
+          <td> {message}</td>
+          <td onClick={deleteContact} className="delete">
+            Delete
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+export default ContactDelete;

@@ -106,6 +106,7 @@ th, td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  width: 25%;
 }
 .contact-admin1{
   padding-top: 2%;
@@ -114,4 +115,22 @@ th, td {
 
 .text-formular{
 margin-bottom: 79px;
+}
+.img23{
+  width: 100%;
+}
+.contact-1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-2{
+  width: 100%;
+    height: 100px;
+    padding: 15px;
+}
+.harta1{
+  width:100%;
+  height:650px;
+  border:0; 
+
 }

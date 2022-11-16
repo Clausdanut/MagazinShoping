@@ -4,7 +4,8 @@ import { useStateValue } from "./StateProvider";
 import { db } from "./firebase";
 import { useState } from "react";
 
-function Product({ id, title, image, price, rating, operation ,slug}) {
+function Product({ id, title, image, price, rating, operation, slug ,overlay}) {
+  const [isHovered,setIsHovered] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const [isEdit, setIsEdu] = useState(false);
   const [state, dispatch] = useStateValue();
@@ -38,35 +39,30 @@ function Product({ id, title, image, price, rating, operation ,slug}) {
   return (
     <div>
       {isDeleted ? (
-        <div className="products">
-
-        </div>
+        <div className="products"></div>
       ) : (
-        
-        <div className="product">
-          <a  className="slug1" href={`/products/${slug}`}>
-            <img src={image} />
-          <div className="product__info">
-            <p className="product__name">{title}</p>
-            <p className="product__price">
-              <small>$</small>
-              <strong>{price}</strong>
-            </p>
-            <div className="product__rating">
-              {Array(rating)
-                .fill()
-                .map((_, i) => (
-                  <p>⭐</p>
-                ))}
+        <div className="product" onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
+          <a className="slug1" href={`/products/${slug}`}>
+            {isHovered ? <img src={overlay} /> : <img src={image} />}
+            <div className="product__info">
+              <p className="product__name">{title}</p>
+              <p className="product__price">
+                <small>$</small>
+                <strong>{price}</strong>
+              </p>
+              <div className="product__rating">
+                {Array(rating)
+                  .fill()
+                  .map((_, i) => (
+                    <p>⭐</p>
+                  ))}
+              </div>
             </div>
-          </div>
-
-        
           </a>
-          <button className="add_to__cart" onClick={addToBasket}>Add to Basket</button>
-
+          <button className="add_to__cart" onClick={addToBasket}>
+            Add to Basket
+          </button>
         </div>
-      
       )}
     </div>
   );
