@@ -11,10 +11,6 @@ import AdminProduct from "./Admin-products";
 import AdminContact from "./Admin-contact";
 import Admin from "./Admin";
 import Create from "./Create";
-import ProductDelete from "./ProductDelete";
-import ContactDelete from "./ContactDelete";
-import HomeScreen from "./HomeScreen";
-import ContactEdit from "./ContactEdit";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
@@ -34,7 +30,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log("User >>>", authUser);
 
       if (authUser) {
         dispatch({
@@ -92,14 +87,6 @@ function App() {
           <Route path="/login">
             <Header />
             <Login></Login>
-          </Route>
-
-          <Route path="/homescreen">
-            <Header />
-            <div className="product1">
-              <AdminSidebar />
-              <HomeScreen />
-            </div>
           </Route>
 
           <Route path="/admin-product">

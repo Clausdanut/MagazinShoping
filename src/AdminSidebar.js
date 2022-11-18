@@ -41,12 +41,6 @@ export default function AdminSidebar() {
                   </Link>
                   <ul class="collapse list-unstyled" id="productSubmenu">
                     <li>
-                      <a href="/admin-product">
-                        <i class="fas fa-clipboard-list"></i> All
-                      </a>
-                    </li>
-
-                    <li>
                       <Link
                         to="/create"
                         data-toggle="collapse"

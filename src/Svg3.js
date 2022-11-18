@@ -1,6 +1,7 @@
 function Svg3() {
   return (
-                            <svg className="svg3"
+    <svg
+      className="svg3"
       preserveAspectRatio="xMidYMid meet"
       data-bbox="33.2 20 133.6 160.1"
       viewBox="33.2 20 133.6 160.1"
@@ -60,4 +61,4 @@ function Svg3() {
   );
 }
 
-export default Svg3
+export default Svg3;

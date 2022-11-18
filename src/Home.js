@@ -81,6 +81,7 @@ function Home() {
                     key={key}
                     id={key}
                     title={product.nume}
+                    detaliu={product.detaliu}
                     price={product.pret}
                     rating={product.rating}
                     image={product.imagine}
@@ -231,9 +232,7 @@ function Home() {
             </div>
           </div>
           <div class="column-ultima">
-            <p className="paragraf20">
-            © 2023 by Visage. 
-            </p>
+            <p className="paragraf20">© 2023 by Visage.</p>
           </div>
         </div>
       </div>

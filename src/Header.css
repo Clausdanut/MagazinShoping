@@ -3,19 +3,19 @@
   margin: 0;
 }
 .header {
-    background-color: #ffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    padding: 0 40px;
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 0 40px;
 }
 
-.links{
-    display: flex;
+.links {
+  display: flex;
 }
 
 .header__logo {
@@ -104,13 +104,14 @@
 .search {
   position: relative;
   display: flex;
-  
-    border-radius: 8px; color: white;
-    padding: 4px;
-    border-radius: 8px; color: white;
-    border: 1px solid black;
-}
 
+  border-radius: 8px;
+  color: white;
+  padding: 4px;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid black;
+}
 
 .searchTerm {
   padding: 5px;
@@ -125,7 +126,7 @@
 .searchButton {
   width: 40px;
   height: 36px;
- 
+
   background: white;
   text-align: center;
   color: #111;
@@ -133,7 +134,6 @@
   cursor: pointer;
   font-size: 10px;
 }
-
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
@@ -157,25 +157,24 @@
   font-size: 30px;
 }
 
-.linc1{
-  text-decoration:none;
+.linc1 {
+  text-decoration: none;
   width: 33%;
 }
-.MuiSvgIcon-root searchButton{
+.MuiSvgIcon-root searchButton {
   fill: black;
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    font-size: 1.5rem;
-    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    flex-shrink: 0;
-    user-select: none;
-    border: none;
-
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+  border: none;
 }
-.logo7{
+.logo7 {
   height: 30px;
-    width: 100%;
-    object-fit: cover;
-    padding: 5px;
+  width: 100%;
+  object-fit: cover;
+  padding: 5px;
 }

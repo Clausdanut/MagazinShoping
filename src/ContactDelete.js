@@ -7,6 +7,8 @@ import { useState } from "react";
 function ContactDelete({ id, nume, email, message }) {
   const [isDeleted, setIsDeleted] = useState(false);
   const [state, dispatch] = useStateValue();
+
+  // Functia care sterge contactul dupa un anumit ID
   async function deleteContact() {
     const contact = db.collection("contacts");
     const doc = contact.where("id", "==", id);
@@ -19,8 +21,7 @@ function ContactDelete({ id, nume, email, message }) {
       });
     }
   }
-
-  console.log(id);
+  // Functia care sterge contactul dupa un anumit ID
 
   return (
     <>
@@ -31,9 +32,11 @@ function ContactDelete({ id, nume, email, message }) {
           <td> {nume}</td>
           <td> {email}</td>
           <td> {message}</td>
+          {/* Butonul care apeleaza functia de stergere dupa id-ul sau */}
           <td onClick={deleteContact} className="delete">
             Delete
           </td>
+          {/* Butonul care apeleaza functia de stergere dupa id-ul sau */}
         </tr>
       )}
     </>

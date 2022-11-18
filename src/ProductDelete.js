@@ -4,7 +4,15 @@ import { useStateValue } from "./StateProvider";
 import { db } from "./firebase";
 import { useState } from "react";
 
-function ProductDelete({ id, title, imagine, price, rating, operation }) {
+function ProductDelete({
+  id,
+  title,
+  imagine,
+  price,
+  rating,
+  operation,
+  detaliu,
+}) {
   const [isDeleted, setIsDeleted] = useState(false);
   const [state, dispatch] = useStateValue();
   async function deleteProduct() {
@@ -40,6 +48,7 @@ function ProductDelete({ id, title, imagine, price, rating, operation }) {
       ) : (
         <tr className="product-del-table">
           <td> {title}</td>
+          <td> {detaliu}</td>
           <td> {rating}</td>
           <td> {price}</td>
           <td>

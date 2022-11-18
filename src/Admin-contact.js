@@ -1,3 +1,4 @@
+//i
 import React from "react";
 import "./Contact.css";
 import Contact from "./Contact";
@@ -9,6 +10,8 @@ import ContactDelete from "./ContactDelete";
 const AdminContact = (props) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+  // Functia de preluare a datelor de contact
   async function getData() {
     setIsLoading(true);
     let helperArr = [];
@@ -24,11 +27,13 @@ const AdminContact = (props) => {
       setIsLoading(false);
     }
   }
+  // Functia de preluare a datelor de contact
+
+  // Preluarea datelor din baza de date la deschiderea paginii
   useEffect(() => {
     getData();
   }, []);
-
-  console.log(data);
+  // Preluarea datelor din baza de date la deschiderea paginii
 
   return (
     <div>
@@ -42,20 +47,21 @@ const AdminContact = (props) => {
           </tr>
         </thead>
         <tbody>
-            {isLoading ? (
-              <div>Loading</div>
-            ) : (
-              data.map((contact) => {
-                return (
-                  <ContactDelete
-                    nume={contact.name}
-                    message={contact.message}
-                    email={contact.email}
-                    id={contact.id}
-                  ></ContactDelete>
-                );
-              })
-            )}
+          {isLoading ? (
+            <div>Loading</div>
+          ) : (
+            data.map((contact) => {
+              return (
+                <ContactDelete
+                  nume={contact.name}
+                  message={contact.message}
+                  email={contact.email}
+                  id={contact.id}
+                  key={contact.id}
+                ></ContactDelete>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>

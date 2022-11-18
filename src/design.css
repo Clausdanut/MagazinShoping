@@ -1,12 +1,10 @@
-
 body {
-  font-family: 'Amazon Ember';
+  font-family: "Amazon Ember";
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  
 }
 
 /* Scroll Bar */
@@ -132,7 +130,7 @@ footer {
 }
 
 .rating-outer::before {
-  content: '\f006 \f006 \f006 \f006 \f006';
+  content: "\f006 \f006 \f006 \f006 \f006";
 }
 
 .rating-inner {
@@ -145,7 +143,7 @@ footer {
 }
 
 .rating-inner::before {
-  content: '\f005 \f005 \f005 \f005 \f005';
+  content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
 }
 
@@ -202,7 +200,7 @@ footer {
   padding-left: 0;
 }
 .loader:after {
-  content: ' ';
+  content: " ";
   display: block;
   width: 64px;
   height: 64px;
@@ -531,11 +529,11 @@ footer {
 }
 
 #sidebar ul li.active > a,
-a[aria-expanded='true'] {
+a[aria-expanded="true"] {
   color: #fff;
   background: #232f3e;
 }
-a[data-toggle='collapse'] {
+a[data-toggle="collapse"] {
   position: relative;
 }
 .dropdown-toggle::after {
@@ -614,20 +612,20 @@ ul.CTAs a {
   color: grey;
 }
 
-.product1{
-    display: grid;
-    grid-template-columns: 0.1fr 0.9fr;
+.product1 {
+  display: grid;
+  grid-template-columns: 0.1fr 0.9fr;
 }
-.sidebar-col{
-height: 100%;
-width: 100%;
+.sidebar-col {
+  height: 100%;
+  width: 100%;
 }
-.col-2{
-    height: 100%;
-width: 100%;
+.col-2 {
+  height: 100%;
+  width: 100%;
 }
-.continer{
-background-color: rgba(255, 255, 255, 0.8);
+.continer {
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -670,13 +668,13 @@ background-color: rgba(255, 255, 255, 0.8);
 }
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .login-box .user-box input:focus ~ label,
@@ -696,24 +694,22 @@ background-color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
   letter-spacing: 4px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.login-box form a button{
-  cursor:pointer;
+.login-box form a button {
+  cursor: pointer;
 }
 
 .login-box a:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
 }
 
 .login-box a span {
@@ -734,7 +730,8 @@ background-color: rgba(255, 255, 255, 0.8);
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -746,14 +743,15 @@ background-color: rgba(255, 255, 255, 0.8);
   height: 100%;
   background: linear-gradient(180deg, transparent, #03e9f4);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -765,14 +763,15 @@ background-color: rgba(255, 255, 255, 0.8);
   height: 2px;
   background: linear-gradient(270deg, transparent, #03e9f4);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -784,19 +783,20 @@ background-color: rgba(255, 255, 255, 0.8);
   height: 100%;
   background: linear-gradient(360deg, transparent, #03e9f4);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-.btn1{
+.btn1 {
   font-size: 25px;
   color: white;
   background-color: transparent;
@@ -805,8 +805,8 @@ background-color: rgba(255, 255, 255, 0.8);
   border: none;
 }
 .section1 {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
   background: linear-gradient(#094fd1, #243b55);
 }

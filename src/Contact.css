@@ -35,7 +35,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top:5%;
+  padding-top: 5%;
 }
 
 .form > h1 {
@@ -89,48 +89,47 @@ textarea:focus {
 .form > button:hover {
   background-color: rgb(0, 0, 196);
 }
-table, td, th {  
+table,
+td,
+th {
   border: 1px solid #ddd;
   text-align: left;
 }
-
 
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-
-
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   width: 25%;
 }
-.contact-admin1{
+.contact-admin1 {
   padding-top: 2%;
   font-size: 25px;
 }
 
-.text-formular{
-margin-bottom: 79px;
+.text-formular {
+  margin-bottom: 79px;
 }
-.img23{
+.img23 {
   width: 100%;
 }
-.contact-1{
+.contact-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.contact-2{
+.contact-2 {
   width: 100%;
-    height: 100px;
-    padding: 15px;
+  height: 100px;
+  padding: 15px;
 }
-.harta1{
-  width:100%;
-  height:650px;
-  border:0; 
-
+.harta1 {
+  width: 100%;
+  height: 650px;
+  border: 0;
 }

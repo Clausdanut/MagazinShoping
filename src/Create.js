@@ -4,14 +4,11 @@ import { db } from "./firebase";
 import "./Login.css";
 import { storage } from "./firebase";
 
-import { Link, useHistory } from "react-router-dom";
-import StorefrontIcon from "@material-ui/icons/Storefront";
-import { auth } from "./firebase";
-import HomeScreen from "./HomeScreen";
 
 export default function Create() {
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
+  const [detaliu, setdetaliu] = useState("");
   const [rating, setRating] = useState("");
   const [imagine, setImage] = useState("");
   const [img, setImg] = useState();
@@ -21,46 +18,45 @@ export default function Create() {
     setImg(file);
   };
 
-   function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    function postProduct(uri){
+    function postProduct(uri) {
       db.collection("products")
-      .add({
-        nume: name,
-        pret: Number(price),
-        is_product: true,
-        rating: Number(rating),
-        id: Math.random(),
-        imagine:uri
-      })
-      .then(() => {
-        alert("Mesaj trmis👍");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+        .add({
+          nume: name,
+          detaliu: detaliu,
+          pret: Number(price),
+          is_product: true,
+          rating: Number(rating),
+          id: Math.random(),
+          imagine: uri,
+        })
+        .then(() => {
+          alert("Produs adaugat👍");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
 
-    setName("");
-    setPrice("");
-    setRating("");
-    setImage("");
-  }
+      setName("");
+      setPrice("");
+      setRating("");
+      setImage("");
+    }
     uploadFiles(img);
 
     const timeout1 = setTimeout(() => {
-        storage
+      storage
         .ref("files")
         .child(img.name)
         .getDownloadURL()
         .then((url) => {
           postProduct(url);
-      });      
+        });
     }, 3000);
   }
   const uploadFiles = (file) => {
-    storage
-      .ref(`files/${file.name}`)
-      .put(file)
+    storage.ref(`files/${file.name}`).put(file);
   };
 
   return (
@@ -73,6 +69,14 @@ export default function Create() {
 
         <label>Pret</label>
         <input placeholder="pret" onChange={(e) => setPrice(e.target.value)} />
+        <label>Detaliu</label>
+        <textarea
+          placeholder="detaliu"
+          onChange={(e) => setdetaliu(e.target.value)}
+        />
+         
+
+
         <label>Rating</label>
         <input
           placeholder="rating"
@@ -80,7 +84,7 @@ export default function Create() {
         />
         <label>Imagine</label>
         <input type="file" name="image" onChange={onImageChange} />
-        
+
         <button type="submit">Upload</button>
         <img src={img} alt="" />
       </form>

@@ -1,18 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sono&display=swap");
 * {
-    margin: 0;
-    font-family: 'Sono', sans-serif;
-  }
+  margin: 0;
+  font-family: "Sono", sans-serif;
+}
 
-  .product-delete{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-  }
+.product-delete {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
 
-  .product-delete img{
-    width: 100px;
-    height: 100px;
-  }
- 
+.product-delete img {
+  width: 100px;
+  height: 100px;
+}
+.product__rating2 {
+  display: flex;
+  height: 25px;
+}
+
+.product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/*--------------------------------------------------------------
+# TABLE
+--------------------------------------------------------------*/
+
+.table table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 24px;
+}
+
+.table table tr:hover {
+  background-color: #fe9c7a;
+}
+
+/* .dark .table table tr:hover {
+	/* background-color: var(--neutral-dark-opacity-12); */
+
+.table table th,
+.table table td {
+  height: 59px;
+  padding: 50px 16px;
+  text-align: left;
+  border-bottom: thin solid var(--neutral-90);
+  border: 2px solid;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dark .table table th,
+.dark .table table td {
+  border-bottom: thin solid var(--neutral-20);
+}
+.product_tabel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 37px;
+}
+.table {
+  width: 100%;
+  align-self: center;
+}
+.text30 {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 16px;
+}
+
+.product_tabel img {
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+}

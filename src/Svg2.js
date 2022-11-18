@@ -1,6 +1,7 @@
 function Svg2() {
   return (
-                        <svg className="svg2"
+    <svg
+      className="svg2"
       preserveAspectRatio="xMidYMid meet"
       data-bbox="28 31.103 143.9 137.897"
       viewBox="28 31.103 143.9 137.897"
